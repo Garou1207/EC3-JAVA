@@ -10,7 +10,6 @@ import javax.swing.SpinnerNumberModel;
 
 public class Ejercicio01Calculos implements IEjercicio01{
     
-    
     private int anio;
     private int dia;
     
@@ -66,14 +65,25 @@ public class Ejercicio01Calculos implements IEjercicio01{
         int anios = LocalDate.now().getYear();
         anio = anios - getAnio();
         int dias = getDia();
+        int meses = cbo.getSelectedIndex();
         String signoZ = "";
         if (cbo.getSelectedIndex() == 0) {
             JOptionPane.showMessageDialog(null, "Debes de seleccionar un mes");
         } else {
-            if ((dias >= 21 && cbo.getSelectedIndex() == 4) || (dias <= 19 && cbo.getSelectedIndex() == 5)) {
-                signoZ = "Aries";
-            }
-            lbl.setText("Usted tiene " + anio + " años de edad y su signo es " + signoZ);
+            if ((dias >= 21 && meses == 3) || (dias <= 19 && meses == 4)) signoZ = "Aries";
+            if ((dias >= 20 && meses == 4) || (dias <= 20 && meses == 5)) signoZ = "Tauro";
+            if ((dias >= 21 && meses == 5) || (dias <= 20 && meses == 6)) signoZ = "Géminis";
+            if ((dias >= 21 && meses == 6) || (dias <= 22 && meses == 7)) signoZ = "Cáncer";
+            if ((dias >= 23 && meses == 7) || (dias <= 22 && meses == 8)) signoZ = "Leo";
+            if ((dias >= 23 && meses == 3) || (dias <= 22 && meses == 9)) signoZ = "Virgo";
+            if ((dias >= 23 && meses == 9) || (dias <= 22 && meses == 10)) signoZ = "Libra";
+            if ((dias >= 23 && meses == 10) || (dias <= 21 && meses == 11)) signoZ = "Escorpio";
+            if ((dias >= 22 && meses == 11) || (dias <= 21 && meses == 12)) signoZ = "Sagitario";
+            if ((dias >= 22 && meses == 12) || (dias <= 19 && meses == 1)) signoZ = "Capricornio";
+            if ((dias >= 20 && meses == 1) || (dias <= 18 && meses == 2)) signoZ = "Acuario";
+            if ((dias >= 19 && meses == 2) || (dias <= 20 && meses == 3)) signoZ = "Piscis";
+            
+            lbl.setText("Usted tiene " + anio + " años de edad y su signo es " + signoZ + ".");
         }
     }
 }
