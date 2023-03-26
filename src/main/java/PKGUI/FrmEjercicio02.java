@@ -1,15 +1,15 @@
-
 package PKGUI;
 
 import PKCLASES.Ejercicio02Calculos;
 
 public class FrmEjercicio02 extends javax.swing.JFrame {
-
-    Ejercicio02Calculos e2 = new Ejercicio02Calculos();
+    
+    Ejercicio02Calculos e2;
     
     public FrmEjercicio02() {
         initComponents();
         setLocationRelativeTo(null);
+        e2 = new Ejercicio02Calculos(lstNumb);
         e2.ValidarNumeros(txtNumero);
     }
 
@@ -20,7 +20,7 @@ public class FrmEjercicio02 extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         txtNumero = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
-        JListNumb = new javax.swing.JList<>();
+        lstNumb = new javax.swing.JList<>();
         lblOperacion = new javax.swing.JLabel();
         btnSumaNumeros = new javax.swing.JButton();
         btnSumaPares = new javax.swing.JButton();
@@ -37,11 +37,16 @@ public class FrmEjercicio02 extends javax.swing.JFrame {
 
         jLabel1.setText("Ingrese un Número :");
 
-        jScrollPane1.setViewportView(JListNumb);
+        jScrollPane1.setViewportView(lstNumb);
 
         lblOperacion.setText("Suma de Numeros:");
 
         btnSumaNumeros.setText("Sumar Números");
+        btnSumaNumeros.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSumaNumerosActionPerformed(evt);
+            }
+        });
 
         btnSumaPares.setText("Sumar Pares");
 
@@ -75,8 +80,8 @@ public class FrmEjercicio02 extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(lblOperacion)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 53, Short.MAX_VALUE)
-                                .addComponent(txtResultado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(txtResultado, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 218, Short.MAX_VALUE)
                             .addComponent(txtNumero))
                         .addGap(18, 18, 18)
@@ -130,6 +135,10 @@ public class FrmEjercicio02 extends javax.swing.JFrame {
     private void btnFinalizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFinalizarActionPerformed
         dispose();
     }//GEN-LAST:event_btnFinalizarActionPerformed
+
+    private void btnSumaNumerosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSumaNumerosActionPerformed
+        
+    }//GEN-LAST:event_btnSumaNumerosActionPerformed
     
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
@@ -165,7 +174,6 @@ public class FrmEjercicio02 extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JList<String> JListNumb;
     private javax.swing.JButton btnFinalizar;
     private javax.swing.JButton btnOrdenarNumeros;
     private javax.swing.JButton btnRegresar;
@@ -175,6 +183,7 @@ public class FrmEjercicio02 extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lblOperacion;
+    private javax.swing.JList<String> lstNumb;
     private javax.swing.JTextField txtNumero;
     private javax.swing.JTextField txtResultado;
     // End of variables declaration//GEN-END:variables

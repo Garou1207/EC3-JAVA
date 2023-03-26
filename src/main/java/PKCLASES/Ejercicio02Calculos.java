@@ -3,12 +3,27 @@ package PKCLASES;
 import PKINTERFACES.IEjercicio02;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
-import java.util.ArrayList;
+import javax.swing.DefaultListModel;
+import javax.swing.JList;
+import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 
 public class Ejercicio02Calculos implements IEjercicio02 {
     
-    public static ArrayList ANumeros = new ArrayList();
+    DefaultListModel dlm = new DefaultListModel();
+
+    public Ejercicio02Calculos(JList jl) {
+        jl.setModel(dlm);
+    }
+
+    @Override
+    public void AgregarN(int numero) {
+        if (dlm.contains(numero)) {
+                JOptionPane.showMessageDialog(null, "El numero ingresado ya existe");
+        } else {
+                dlm.addElement(numero);
+        }
+    }
     
     @Override
     public void ValidarNumeros(JTextField txt) {
@@ -16,13 +31,13 @@ public class Ejercicio02Calculos implements IEjercicio02 {
             @Override
             public void keyTyped(KeyEvent e) {
                 int tecla = (int)e.getKeyChar();
-                if(tecla >= 48 && tecla <= 57){
-                    if (tecla == 13) {
-                        
+                    if (tecla == 10) {
+                        AgregarN(Integer.parseInt(txt.getText()));
+                        txt.setText(""); txt.requestFocus();
                     }
-                } else {
+                if(tecla >= 48 && tecla <= 57){
+                } else 
                     e.consume();
-                }
             }
         });
     }
