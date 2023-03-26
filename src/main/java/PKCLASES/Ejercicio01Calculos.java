@@ -25,23 +25,17 @@ public class Ejercicio01Calculos implements IEjercicio01{
         cbo.addItem("Diciembre");
         
     }
-
     @Override
     public void Nuevo(JComboBox cbo, JSpinner jsp1, JSpinner jsp2) {
         cbo.setSelectedIndex(0);
         jsp1.setValue(1);
         jsp2.setValue(1970);
     }
-
     @Override
-    public void DiasDeMes(JSpinner jsp) {
-        SpinnerNumberModel spnumero = new SpinnerNumberModel(1, 1, 31, 1);
-        jsp.setModel(spnumero);
+    public void DiaYMes(JSpinner jspDia, JSpinner jspanio) {
+        SpinnerNumberModel spdia = new SpinnerNumberModel(1, 1, 31, 1);
+        jspDia.setModel(spdia);
+        SpinnerNumberModel spanio = new SpinnerNumberModel(1970, 1970, 2010, 1);
+        jspanio.setModel(spanio);
     }    
-
-    @Override
-    public void RangoDeAnio(JSpinner jsp) {
-        SpinnerNumberModel spnumero = new SpinnerNumberModel(1970, 1970, 2010, 1);
-        jsp.setModel(spnumero);
-    }
 }

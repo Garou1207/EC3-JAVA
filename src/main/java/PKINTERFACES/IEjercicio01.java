@@ -7,6 +7,5 @@ public interface IEjercicio01 {
     
     public void AgregarMeses(JComboBox cbo);
     public void Nuevo(JComboBox cbo, JSpinner jsp1, JSpinner jsp2);
-    public void DiasDeMes(JSpinner jsp);
-    public void RangoDeAnio(JSpinner jsp);
+    public void DiaYMes(JSpinner jspDia, JSpinner jspanio);
 }
