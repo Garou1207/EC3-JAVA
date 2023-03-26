@@ -31,7 +31,7 @@
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="LBLMENSAJE" min="-2" max="-2" attributes="0"/>
+                  <Component id="lblMensajeFinal" min="-2" max="-2" attributes="0"/>
                   <Component id="jLabel4" alignment="0" min="-2" max="-2" attributes="0"/>
                   <Group type="102" alignment="0" attributes="0">
                       <Group type="103" groupAlignment="0" attributes="0">
@@ -110,9 +110,9 @@
                       <EmptySpace min="-2" pref="9" max="-2" attributes="0"/>
                   </Group>
               </Group>
-              <Group type="103" groupAlignment="1" attributes="0">
+              <Group type="103" groupAlignment="0" attributes="0">
                   <Component id="btnRegresar" min="-2" max="-2" attributes="0"/>
-                  <Component id="LBLMENSAJE" min="-2" max="-2" attributes="0"/>
+                  <Component id="lblMensajeFinal" alignment="0" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace pref="32" max="32767" attributes="0"/>
           </Group>
@@ -170,9 +170,9 @@
         <Property name="text" type="java.lang.String" value="MENSAJE"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="LBLMENSAJE">
+    <Component class="javax.swing.JLabel" name="lblMensajeFinal">
       <Properties>
-        <Property name="text" type="java.lang.String" value="LBLMENSAJE"/>
+        <Property name="text" type="java.lang.String" value="-"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JSpinner" name="spDias">

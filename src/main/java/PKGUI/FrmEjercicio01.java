@@ -24,7 +24,7 @@ public class FrmEjercicio01 extends javax.swing.JFrame {
         btnNuevo = new javax.swing.JButton();
         btnCerrar = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
-        LBLMENSAJE = new javax.swing.JLabel();
+        lblMensajeFinal = new javax.swing.JLabel();
         spDias = new javax.swing.JSpinner();
         cboMeses = new javax.swing.JComboBox<>();
         spAnios = new javax.swing.JSpinner();
@@ -66,7 +66,7 @@ public class FrmEjercicio01 extends javax.swing.JFrame {
 
         jLabel4.setText("MENSAJE");
 
-        LBLMENSAJE.setText("LBLMENSAJE");
+        lblMensajeFinal.setText("-");
 
         btnRegresar.setText("REGRESAR");
         btnRegresar.addActionListener(new java.awt.event.ActionListener() {
@@ -82,7 +82,7 @@ public class FrmEjercicio01 extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(32, 32, 32)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(LBLMENSAJE)
+                    .addComponent(lblMensajeFinal)
                     .addComponent(jLabel4)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -140,9 +140,9 @@ public class FrmEjercicio01 extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel4)
                         .addGap(9, 9, 9)))
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(btnRegresar)
-                    .addComponent(LBLMENSAJE))
+                    .addComponent(lblMensajeFinal))
                 .addContainerGap(32, Short.MAX_VALUE))
         );
 
@@ -157,11 +157,13 @@ public class FrmEjercicio01 extends javax.swing.JFrame {
     }//GEN-LAST:event_btnRegresarActionPerformed
 
     private void btnMostrarSignoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMostrarSignoActionPerformed
-        
+        e1.setAnio((int)spAnios.getValue());
+        e1.setDia((int)spDias.getValue());
+        e1.CalculoYMensaje(lblMensajeFinal, cboMeses);
     }//GEN-LAST:event_btnMostrarSignoActionPerformed
 
     private void btnNuevoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNuevoActionPerformed
-        e1.Nuevo(cboMeses, spDias, spAnios);
+        e1.Nuevo(cboMeses, spDias, spAnios, lblMensajeFinal);
     }//GEN-LAST:event_btnNuevoActionPerformed
 
     private void btnCerrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCerrarActionPerformed
@@ -204,7 +206,6 @@ public class FrmEjercicio01 extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel LBLMENSAJE;
     private javax.swing.JButton btnCerrar;
     private javax.swing.JButton btnMostrarSigno;
     private javax.swing.JButton btnNuevo;
@@ -214,6 +215,7 @@ public class FrmEjercicio01 extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel lblMensajeFinal;
     private javax.swing.JSpinner spAnios;
     private javax.swing.JSpinner spDias;
     // End of variables declaration//GEN-END:variables
