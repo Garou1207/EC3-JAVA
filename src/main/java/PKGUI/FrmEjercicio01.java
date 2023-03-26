@@ -10,6 +10,8 @@ public class FrmEjercicio01 extends javax.swing.JFrame {
         initComponents();
         setLocationRelativeTo(null);
         e1.AgregarMeses(cboMeses);
+        e1.DiasDeMes(spDias);
+        e1.RangoDeAnio(spAnios);
     }
 
     @SuppressWarnings("unchecked")

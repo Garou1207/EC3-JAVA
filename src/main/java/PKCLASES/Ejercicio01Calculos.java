@@ -3,6 +3,7 @@ package PKCLASES;
 import PKINTERFACES.IEjercicio01;
 import javax.swing.JComboBox;
 import javax.swing.JSpinner;
+import javax.swing.SpinnerNumberModel;
 
 public class Ejercicio01Calculos implements IEjercicio01{
     
@@ -30,5 +31,17 @@ public class Ejercicio01Calculos implements IEjercicio01{
         cbo.setSelectedIndex(0);
         jsp1.setValue(1);
         jsp2.setValue(1970);
+    }
+
+    @Override
+    public void DiasDeMes(JSpinner jsp) {
+        SpinnerNumberModel spnumero = new SpinnerNumberModel(1, 1, 31, 1);
+        jsp.setModel(spnumero);
+    }    
+
+    @Override
+    public void RangoDeAnio(JSpinner jsp) {
+        SpinnerNumberModel spnumero = new SpinnerNumberModel(1970, 1970, 2010, 1);
+        jsp.setModel(spnumero);
     }
 }
