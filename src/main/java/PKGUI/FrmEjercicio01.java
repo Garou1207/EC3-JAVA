@@ -50,14 +50,14 @@ public class FrmEjercicio01 extends javax.swing.JFrame {
             }
         });
 
-        btnNuevo.setText("NUEVO");
+        btnNuevo.setText("Nuevo");
         btnNuevo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnNuevoActionPerformed(evt);
             }
         });
 
-        btnCerrar.setText("CERRAR");
+        btnCerrar.setText("Cerrar");
         btnCerrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnCerrarActionPerformed(evt);
@@ -68,7 +68,7 @@ public class FrmEjercicio01 extends javax.swing.JFrame {
 
         lblMensajeFinal.setText("-");
 
-        btnRegresar.setText("REGRESAR");
+        btnRegresar.setText("Regresar");
         btnRegresar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnRegresarActionPerformed(evt);
@@ -153,7 +153,6 @@ public class FrmEjercicio01 extends javax.swing.JFrame {
         FrmPrincipal frm=new FrmPrincipal();
         frm.setVisible(true);
         this.dispose();
-        
     }//GEN-LAST:event_btnRegresarActionPerformed
 
     private void btnMostrarSignoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMostrarSignoActionPerformed
