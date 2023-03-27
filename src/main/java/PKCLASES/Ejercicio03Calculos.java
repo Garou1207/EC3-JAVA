@@ -6,10 +6,10 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
+import java.text.SimpleDateFormat;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
-import javax.swing.JOptionPane;
 import javax.swing.JRadioButton;
 import javax.swing.JTextField;
 
@@ -77,7 +77,7 @@ public class Ejercicio03Calculos implements IEjercicio03 {
                 if (hil.isSelected()) {
                     bHora = 20;
                     txt.setText("" + bHora);
-                }
+                } 
             }
         });
     }
@@ -98,5 +98,19 @@ public class Ejercicio03Calculos implements IEjercicio03 {
     @Override
     public void PagoTotal() {
         pTotal = hTrabajadas * bHora;
+    }
+
+    @Override
+    public void ValidarAnios(JTextField txtA) {
+        txtA.addKeyListener(new KeyAdapter() {
+            @Override
+            public void keyTyped(KeyEvent e) {
+                int tecla = (int)e.getKeyChar();
+                if(tecla >= 48 && tecla <= 57 && txtA.getText().length() < 4){
+                } else {
+                    e.consume();
+                }
+            }
+        });
     }
 }

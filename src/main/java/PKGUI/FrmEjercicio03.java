@@ -13,6 +13,7 @@ public class FrmEjercicio03 extends javax.swing.JFrame {
         setLocationRelativeTo(null);
         e3.ValidarNumeros(txtHorasTrabajadas);
         e3.ValidarLetras(txtNombres);
+        e3.ValidarAnios(txtFechaIngreso);
         e3.MostrarIMG(lblImagen);
         e3.BHHilanderia(rbHilanderia, txtBasicoHora);
         e3.BHTintoleria(rbTintoreria, txtBasicoHora);
