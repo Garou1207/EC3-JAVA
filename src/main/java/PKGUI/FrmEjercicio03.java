@@ -132,10 +132,8 @@ public class FrmEjercicio03 extends javax.swing.JFrame {
         );
 
         txtAFP.setEditable(false);
-        txtAFP.setText("0");
 
         txtFaltasT.setEditable(false);
-        txtFaltasT.setText("0");
 
         jLabel8.setText("Pago Neto:");
 
@@ -297,7 +295,7 @@ public class FrmEjercicio03 extends javax.swing.JFrame {
     }//GEN-LAST:event_btnSalirActionPerformed
 
     private void btnNuevoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNuevoActionPerformed
-        
+        e3.Nuevo(this.getContentPane(), buttonGroup1, chkAFP, chkFaltasT);
     }//GEN-LAST:event_btnNuevoActionPerformed
 
     private void btnCalcularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCalcularActionPerformed

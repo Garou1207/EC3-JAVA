@@ -1,6 +1,7 @@
 package PKCLASES;
 
 import PKINTERFACES.IEjercicio03;
+import java.awt.Container;
 import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -8,6 +9,7 @@ import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import javax.swing.ButtonGroup;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JCheckBox;
@@ -165,5 +167,15 @@ public class Ejercicio03Calculos implements IEjercicio03 {
     @Override
     public void PagoNeto() {
         pagoNeto = pTotal + boni - (AFP + faytar);
+    }
+
+    @Override
+    public void Nuevo(Container c, ButtonGroup bg, JCheckBox a, JCheckBox f) {
+        for (int i = 0; c.getComponents().length > i; i++) {
+            if (c.getComponents()[i] instanceof JTextField) {
+                ((JTextField)c.getComponents()[i]).setText("");
+            }
+        }
+        bg.clearSelection(); a.setSelected(false); f.setSelected(false);
     }
 }
