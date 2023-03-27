@@ -300,8 +300,7 @@ public class FrmEjercicio03 extends javax.swing.JFrame {
 
     private void btnCalcularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCalcularActionPerformed
         e3.sethTrabajadas(Integer.parseInt(txtHorasTrabajadas.getText()));
-        e3.PagoTotal();  e3.Bonificacion(txtFechaIngreso);
-        e3.Descuentos(chkAFP, chkFaltasT); e3.PagoNeto();
+        e3.Calcular(txtFechaIngreso, chkAFP, chkAFP, txtNombres, txtHorasTrabajadas);
         txtPagoTotal.setText(""+ e3.getpTotal());
         txtBonificacion.setText("" + e3.getBoni());
         txtAFP.setText("" + e3.getAFP());

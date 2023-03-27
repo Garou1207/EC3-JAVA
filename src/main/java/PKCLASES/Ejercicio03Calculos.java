@@ -14,6 +14,7 @@ import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JCheckBox;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JRadioButton;
 import javax.swing.JTextField;
 
@@ -137,13 +138,14 @@ public class Ejercicio03Calculos implements IEjercicio03 {
     }
     
     @Override
-    public void PagoTotal() {
-        pTotal = hTrabajadas * bHora;
-    }
-
-    @Override
-    public void Bonificacion(JTextField txtA) {
-        boni = 0;
+    public void Calcular(JTextField txtA, JCheckBox afp, JCheckBox fyT, JTextField txtNyA, JTextField txtH) {
+        if (txtNyA.getText().equals("")) {
+            JOptionPane.showMessageDialog(null, "Debes de ingresar un nombre");
+        } else if (txtH.getText().equals("")) {
+            JOptionPane.showMessageDialog(null, "Debes de ingresar las horas trabajadas");
+        }
+        pTotal = hTrabajadas * bHora; // Pago total
+        boni = 0; // Calculando Bonificacion
         String fechaIngresadaTexto = txtA.getText();
         int anioIngresado = Integer.parseInt(fechaIngresadaTexto.substring(6));
         LocalDate fechaActual = LocalDate.now();
@@ -152,23 +154,15 @@ public class Ejercicio03Calculos implements IEjercicio03 {
         if (anio > 5) {
             boni = pTotal * 0.05;
         } 
-    }
-
-    @Override
-    public void Descuentos(JCheckBox  afp, JCheckBox  fyT) {
-         AFP = 0;
+        AFP = 0; // Calculando Descuentos
          faytar = 0;
         if (afp.isSelected()) 
             AFP = pTotal * 0.11;
         if (fyT.isSelected()) 
             faytar = pTotal * 0.16;
+        pagoNeto = pTotal + boni - (AFP + faytar); // Pago Neto
     }
-
-    @Override
-    public void PagoNeto() {
-        pagoNeto = pTotal + boni - (AFP + faytar);
-    }
-
+    
     @Override
     public void Nuevo(Container c, ButtonGroup bg, JCheckBox a, JCheckBox f) {
         for (int i = 0; c.getComponents().length > i; i++) {
