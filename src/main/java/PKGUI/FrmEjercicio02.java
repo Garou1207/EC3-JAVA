@@ -28,7 +28,7 @@ public class FrmEjercicio02 extends javax.swing.JFrame {
         btnFinalizar = new javax.swing.JButton();
         btnOrdenarNumeros = new javax.swing.JButton();
         txtResultado = new javax.swing.JTextField();
-        btnRegresar = new javax.swing.JButton();
+        txtNuevo = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("CONTROL NÚMEROS JLIST");
@@ -68,10 +68,10 @@ public class FrmEjercicio02 extends javax.swing.JFrame {
 
         txtResultado.setEditable(false);
 
-        btnRegresar.setText("Regresar");
-        btnRegresar.addActionListener(new java.awt.event.ActionListener() {
+        txtNuevo.setText("Nuevo");
+        txtNuevo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnRegresarActionPerformed(evt);
+                txtNuevoActionPerformed(evt);
             }
         });
 
@@ -90,57 +90,53 @@ public class FrmEjercicio02 extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(txtResultado, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 218, Short.MAX_VALUE)
-                            .addComponent(txtNumero))
+                            .addComponent(txtNumero, javax.swing.GroupLayout.Alignment.TRAILING))
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(btnRegresar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(btnSumarNumeros, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(btnSumaPares, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(btnSumaImpares, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(btnFinalizar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(btnOrdenarNumeros, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                            .addComponent(btnOrdenarNumeros, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(txtNuevo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addContainerGap(32, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(32, 32, 32)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(38, 38, 38)
                 .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnSumarNumeros)
+                    .addComponent(txtNumero, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(txtNumero, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jScrollPane1))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(btnSumarNumeros)
-                        .addGap(18, 18, 18)
                         .addComponent(btnSumaPares)
                         .addGap(18, 18, 18)
                         .addComponent(btnSumaImpares)
                         .addGap(18, 18, 18)
                         .addComponent(btnFinalizar)
                         .addGap(18, 18, 18)
-                        .addComponent(btnOrdenarNumeros)))
+                        .addComponent(txtNuevo))
+                    .addComponent(jScrollPane1))
                 .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnRegresar)
-                    .addComponent(txtResultado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblOperacion))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(txtResultado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(lblOperacion))
+                    .addComponent(btnOrdenarNumeros, javax.swing.GroupLayout.Alignment.TRAILING))
                 .addContainerGap(32, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnRegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegresarActionPerformed
-        FrmPrincipal frm=new FrmPrincipal();
+    private void btnFinalizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFinalizarActionPerformed
+        FrmPrincipal frm = new FrmPrincipal();
         frm.setVisible(true);
         this.dispose();
-    }//GEN-LAST:event_btnRegresarActionPerformed
-
-    private void btnFinalizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFinalizarActionPerformed
-        dispose();
     }//GEN-LAST:event_btnFinalizarActionPerformed
 
     private void btnSumarNumerosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSumarNumerosActionPerformed
@@ -150,6 +146,10 @@ public class FrmEjercicio02 extends javax.swing.JFrame {
     private void btnOrdenarNumerosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnOrdenarNumerosActionPerformed
         e2.OrdernarAscendente();
     }//GEN-LAST:event_btnOrdenarNumerosActionPerformed
+
+    private void txtNuevoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNuevoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtNuevoActionPerformed
     
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
@@ -187,7 +187,6 @@ public class FrmEjercicio02 extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnFinalizar;
     private javax.swing.JButton btnOrdenarNumeros;
-    private javax.swing.JButton btnRegresar;
     private javax.swing.JButton btnSumaImpares;
     private javax.swing.JButton btnSumaPares;
     private javax.swing.JButton btnSumarNumeros;
@@ -195,6 +194,7 @@ public class FrmEjercicio02 extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lblOperacion;
     private javax.swing.JList<String> lstNumb;
+    private javax.swing.JButton txtNuevo;
     private javax.swing.JTextField txtNumero;
     private javax.swing.JTextField txtResultado;
     // End of variables declaration//GEN-END:variables
