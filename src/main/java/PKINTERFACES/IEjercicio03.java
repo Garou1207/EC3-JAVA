@@ -10,6 +10,8 @@ public interface IEjercicio03 {
     void ValidarLetras(JTextField txtN);
     void ValidarNumeros(JTextField txtH);
     void MostrarIMG(JLabel img);
-    void BasicoHora(JRadioButton hil, JRadioButton tin);
+    void BHHilanderia(JRadioButton hil, JTextField txt);
+    void BHTintoleria(JRadioButton tin, JTextField txt);
+    //void BasicoHora(JRadioButton hil, JRadioButton tin, JTextField txt);
     void PagoTotal();
 }

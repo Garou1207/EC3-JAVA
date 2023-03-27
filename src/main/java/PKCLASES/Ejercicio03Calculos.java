@@ -2,6 +2,8 @@ package PKCLASES;
 
 import PKINTERFACES.IEjercicio03;
 import java.awt.Image;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import javax.swing.Icon;
@@ -66,21 +68,35 @@ public class Ejercicio03Calculos implements IEjercicio03 {
                   img.getWidth(), img.getHeight(), Image.SCALE_DEFAULT));
         img.setIcon(icon);
     }
-
+        
     @Override
-    public void BasicoHora(JRadioButton hil, JRadioButton tin) {
-        if (hil.isSelected()) {
-            bHora = 20;
-        } else if (tin.isSelected()) {
-            bHora = 22;
-        } else {
-            JOptionPane.showMessageDialog(null, "Debes seleccionar una seccion");
-        }
+    public void BHHilanderia(JRadioButton hil, JTextField txt) {
+        hil.addActionListener(new ActionListener(){
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if (hil.isSelected()) {
+                    bHora = 20;
+                    txt.setText("" + bHora);
+                }
+            }
+        });
     }
-
+    
+    @Override
+    public void BHTintoleria(JRadioButton tin, JTextField txt) {
+        tin.addActionListener(new ActionListener(){
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if (tin.isSelected()) {
+                    bHora = 22;
+                    txt.setText("" + bHora);
+                }
+            }
+        });
+    }
+  
     @Override
     public void PagoTotal() {
         pTotal = hTrabajadas * bHora;
     }
-
 }

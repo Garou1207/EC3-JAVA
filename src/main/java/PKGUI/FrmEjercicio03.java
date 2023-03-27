@@ -14,6 +14,8 @@ public class FrmEjercicio03 extends javax.swing.JFrame {
         e3.ValidarNumeros(txtHorasTrabajadas);
         e3.ValidarLetras(txtNombres);
         e3.MostrarIMG(lblImagen);
+        e3.BHHilanderia(rbHilanderia, txtBasicoHora);
+        e3.BHTintoleria(rbTintoreria, txtBasicoHora);
     }
 
     @SuppressWarnings("unchecked")
@@ -297,9 +299,7 @@ public class FrmEjercicio03 extends javax.swing.JFrame {
 
     private void btnCalcularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCalcularActionPerformed
         e3.sethTrabajadas(Integer.parseInt(txtHorasTrabajadas.getText()));
-        e3.BasicoHora(rbHilanderia, rbTintoreria);
         e3.PagoTotal();
-        txtBasicoHora.setText("" + e3.getbHora());
         txtPagoTotal.setText(""+ e3.getpTotal());
     }//GEN-LAST:event_btnCalcularActionPerformed
   
