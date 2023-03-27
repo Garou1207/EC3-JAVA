@@ -17,7 +17,7 @@ import java.util.Date;
 import java.awt.event.ActionEvent;
 import java.util.Locale;
 
-public class Venta {
+public class Ejercicio04Calculos {
        
     public static void actualizarHoraYFecha(JLabel lblReloj, JLabel lblFecha) {
         Timer timer = new Timer(1000, (ActionEvent e) -> {

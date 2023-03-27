@@ -1,10 +1,10 @@
 package PKGUI;
 
-import PKCLASES.Datos;
+import PKCLASES.Ejercicio04Datos;
 
 public class FrmEjercicio04Datos extends javax.swing.JFrame {
 
-    private Datos datos;
+    private Ejercicio04Datos datos;
     
     public FrmEjercicio04Datos() {
         initComponents();
@@ -130,7 +130,7 @@ public class FrmEjercicio04Datos extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnCerrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCerrarActionPerformed
-        Datos.cerrarFormulario(this);
+        Ejercicio04Datos.cerrarFormulario(this);
     }//GEN-LAST:event_btnCerrarActionPerformed
 
     

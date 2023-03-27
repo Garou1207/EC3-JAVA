@@ -6,20 +6,20 @@ import javax.swing.JComboBox;
 import javax.swing.JTable;
 import javax.swing.JTextField;
 import javax.swing.table.DefaultTableModel;
-import PKCLASES.Venta;
-import PKCLASES.Datos;
+import PKCLASES.Ejercicio04Calculos;
+import PKCLASES.Ejercicio04Datos;
 
 public class FrmEjercicio04 extends javax.swing.JFrame {
 
     public FrmEjercicio04() {
         initComponents();
         setLocationRelativeTo(null);
-        Venta.agregarArticulos(cboarticulos);
-        Venta.mostrarImagen("Informatica",jfoto);
-        Venta.agregarEmpleados(cboEmpleados);
-        Venta.agregarClientes(cboClientes);
-        Venta.columnas(jtablaDetalle);
-        Venta.actualizarHoraYFecha(lblReloj, lblfecha);
+        Ejercicio04Calculos.agregarArticulos(cboarticulos);
+        Ejercicio04Calculos.mostrarImagen("Informatica",jfoto);
+        Ejercicio04Calculos.agregarEmpleados(cboEmpleados);
+        Ejercicio04Calculos.agregarClientes(cboClientes);
+        Ejercicio04Calculos.columnas(jtablaDetalle);
+        Ejercicio04Calculos.actualizarHoraYFecha(lblReloj, lblfecha);
         txtnroproductos.setText("0");
         txttotalventa.setText("0.0");
     }
@@ -390,12 +390,12 @@ public class FrmEjercicio04 extends javax.swing.JFrame {
     private void cboarticulosItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cboarticulosItemStateChanged
         if(cboarticulos.getSelectedIndex()==0){
             txtprecio.setText("0");
-            Venta.mostrarImagen("Informatica", jfoto);
+            Ejercicio04Calculos.mostrarImagen("Informatica", jfoto);
         } else {
             if (cboarticulos.getSelectedIndex()>0){
                 txtprecio.setText(""+
-                    Venta.obtenerPrecio(cboarticulos.getSelectedIndex())); 
-                Venta.mostrarImagen(cboarticulos.getSelectedItem().toString(),jfoto);
+                    Ejercicio04Calculos.obtenerPrecio(cboarticulos.getSelectedIndex())); 
+                Ejercicio04Calculos.mostrarImagen(cboarticulos.getSelectedItem().toString(),jfoto);
             }
         }
     }//GEN-LAST:event_cboarticulosItemStateChanged
@@ -407,21 +407,21 @@ public class FrmEjercicio04 extends javax.swing.JFrame {
         int cantidad = (int)jSpinner1.getValue();
         
         int descuentoSeleccionado = (chkDesc5.isSelected()) ? 5 : (chkDesc10.isSelected()) ? 10 : 0;
-        double descuento = Venta.obtenerDescuento(precio, descuentoSeleccionado, cantidad);
+        double descuento = Ejercicio04Calculos.obtenerDescuento(precio, descuentoSeleccionado, cantidad);
         String descuentoFormateado = String.format(Locale.US, "%.2f", descuento);
-        double total = Venta.obtenerTotal(precio,descuentoSeleccionado, cantidad);
+        double total = Ejercicio04Calculos.obtenerTotal(precio,descuentoSeleccionado, cantidad);
         String totalFormateado = String.format(Locale.US,"%.2f", total);
  
         DefaultTableModel modelo = (DefaultTableModel) jtablaDetalle.getModel();
         modelo.addRow(new Object[]{producto, precio, cantidad, descuentoFormateado, totalFormateado});
         
-        Venta.actualizarNumeroProductos(jtablaDetalle, txtnroproductos, txttotalventa);
+        Ejercicio04Calculos.actualizarNumeroProductos(jtablaDetalle, txtnroproductos, txttotalventa);
         
 
     }//GEN-LAST:event_btnAgregarActionPerformed
 
     private void btnVerReporteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVerReporteActionPerformed
-        Datos obj = new Datos();
+        Ejercicio04Datos obj = new Ejercicio04Datos();
         String empleadoSeleccionado = cboEmpleados.getSelectedItem().toString();
         obj.setEmpleado(empleadoSeleccionado);
         FrmEjercicio04Datos frm = new FrmEjercicio04Datos();
@@ -429,7 +429,7 @@ public class FrmEjercicio04 extends javax.swing.JFrame {
     }//GEN-LAST:event_btnVerReporteActionPerformed
 
     private void btnNuevoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNuevoActionPerformed
-        Venta.limpiarControles(new JTextField[]{txtprecio, txtnroproductos, txttotalventa},
+        Ejercicio04Calculos.limpiarControles(new JTextField[]{txtprecio, txtnroproductos, txttotalventa},
         new JComboBox[]{cboEmpleados, cboClientes, cboarticulos},
         new JTable[]{jtablaDetalle},
         new JCheckBox[]{chkDesc5, chkDesc10},
@@ -438,14 +438,14 @@ public class FrmEjercicio04 extends javax.swing.JFrame {
 
     private void btnQuitarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnQuitarActionPerformed
        
-       Venta.quitarArticulosTabla(jtablaDetalle);
-       Venta.actualizarNumeroProductos(jtablaDetalle, txtnroproductos, txttotalventa);
+       Ejercicio04Calculos.quitarArticulosTabla(jtablaDetalle);
+       Ejercicio04Calculos.actualizarNumeroProductos(jtablaDetalle, txtnroproductos, txttotalventa);
        
     }//GEN-LAST:event_btnQuitarActionPerformed
 
     private void btnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarActionPerformed
-       Venta.cancelarArticulosTabla(jtablaDetalle);
-       Venta.actualizarNumeroProductos(jtablaDetalle, txtnroproductos, txttotalventa);
+       Ejercicio04Calculos.cancelarArticulosTabla(jtablaDetalle);
+       Ejercicio04Calculos.actualizarNumeroProductos(jtablaDetalle, txtnroproductos, txttotalventa);
        
     }//GEN-LAST:event_btnCancelarActionPerformed
 

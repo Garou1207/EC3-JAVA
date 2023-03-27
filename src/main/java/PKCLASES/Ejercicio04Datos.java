@@ -4,7 +4,7 @@ package PKCLASES;
 import java.util.Date;
 import javax.swing.JFrame;
 
-public class Datos {
+public class Ejercicio04Datos {
 
     public String getEmpleado() {
         return Empleado;
