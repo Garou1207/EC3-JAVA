@@ -34,12 +34,12 @@
                   <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
                   <Group type="102" attributes="0">
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                          <Group type="102" alignment="0" attributes="0">
-                              <Component id="lblOperacion" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace max="32767" attributes="0"/>
+                          <Group type="102" alignment="1" attributes="0">
+                              <Component id="lblSumas" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
                               <Component id="txtResultado" min="-2" pref="75" max="-2" attributes="0"/>
                           </Group>
-                          <Component id="jScrollPane1" alignment="0" pref="218" max="32767" attributes="0"/>
+                          <Component id="jScrollPane1" alignment="0" pref="0" max="32767" attributes="0"/>
                           <Component id="txtNumero" alignment="1" max="32767" attributes="0"/>
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
@@ -53,14 +53,14 @@
                       </Group>
                   </Group>
               </Group>
-              <EmptySpace pref="32" max="32767" attributes="0"/>
+              <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
-              <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
               <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
@@ -84,7 +84,7 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="103" alignment="1" groupAlignment="3" attributes="0">
                       <Component id="txtResultado" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="lblOperacion" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="lblSumas" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <Component id="btnOrdenarNumeros" alignment="1" min="-2" max="-2" attributes="0"/>
               </Group>
@@ -120,9 +120,9 @@
         </Component>
       </SubComponents>
     </Container>
-    <Component class="javax.swing.JLabel" name="lblOperacion">
+    <Component class="javax.swing.JLabel" name="lblSumas">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Suma de Numeros:"/>
+        <Property name="text" type="java.lang.String" value="Suma de todos los numeros:"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JButton" name="btnSumarNumeros">
@@ -137,11 +137,17 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Sumar Pares"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnSumaParesActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="btnSumaImpares">
       <Properties>
         <Property name="text" type="java.lang.String" value="Sumar Impares"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnSumaImparesActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="btnFinalizar">
       <Properties>

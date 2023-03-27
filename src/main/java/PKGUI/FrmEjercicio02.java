@@ -21,7 +21,7 @@ public class FrmEjercicio02 extends javax.swing.JFrame {
         txtNumero = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
         lstNumb = new javax.swing.JList<>();
-        lblOperacion = new javax.swing.JLabel();
+        lblSumas = new javax.swing.JLabel();
         btnSumarNumeros = new javax.swing.JButton();
         btnSumaPares = new javax.swing.JButton();
         btnSumaImpares = new javax.swing.JButton();
@@ -39,7 +39,7 @@ public class FrmEjercicio02 extends javax.swing.JFrame {
 
         jScrollPane1.setViewportView(lstNumb);
 
-        lblOperacion.setText("Suma de Numeros:");
+        lblSumas.setText("Suma de todos los numeros:");
 
         btnSumarNumeros.setText("Sumar Números");
         btnSumarNumeros.addActionListener(new java.awt.event.ActionListener() {
@@ -49,8 +49,18 @@ public class FrmEjercicio02 extends javax.swing.JFrame {
         });
 
         btnSumaPares.setText("Sumar Pares");
+        btnSumaPares.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSumaParesActionPerformed(evt);
+            }
+        });
 
         btnSumaImpares.setText("Sumar Impares");
+        btnSumaImpares.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSumaImparesActionPerformed(evt);
+            }
+        });
 
         btnFinalizar.setText("Finalizar");
         btnFinalizar.addActionListener(new java.awt.event.ActionListener() {
@@ -85,11 +95,11 @@ public class FrmEjercicio02 extends javax.swing.JFrame {
                     .addComponent(jLabel1)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(lblOperacion)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addComponent(lblSumas)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(txtResultado, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 218, Short.MAX_VALUE)
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
                             .addComponent(txtNumero, javax.swing.GroupLayout.Alignment.TRAILING))
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -99,12 +109,12 @@ public class FrmEjercicio02 extends javax.swing.JFrame {
                             .addComponent(btnFinalizar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(btnOrdenarNumeros, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(txtNuevo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-                .addContainerGap(32, Short.MAX_VALUE))
+                .addGap(32, 32, 32))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(38, 38, 38)
+                .addGap(32, 32, 32)
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -125,7 +135,7 @@ public class FrmEjercicio02 extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(txtResultado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(lblOperacion))
+                        .addComponent(lblSumas))
                     .addComponent(btnOrdenarNumeros, javax.swing.GroupLayout.Alignment.TRAILING))
                 .addContainerGap(32, Short.MAX_VALUE))
         );
@@ -140,7 +150,7 @@ public class FrmEjercicio02 extends javax.swing.JFrame {
     }//GEN-LAST:event_btnFinalizarActionPerformed
 
     private void btnSumarNumerosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSumarNumerosActionPerformed
-        e2.SumarNumeros(txtResultado);
+        e2.SumarNumeros(txtResultado, lblSumas);
     }//GEN-LAST:event_btnSumarNumerosActionPerformed
 
     private void btnOrdenarNumerosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnOrdenarNumerosActionPerformed
@@ -148,8 +158,16 @@ public class FrmEjercicio02 extends javax.swing.JFrame {
     }//GEN-LAST:event_btnOrdenarNumerosActionPerformed
 
     private void txtNuevoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNuevoActionPerformed
-        // TODO add your handling code here:
+        e2.Limpiar(txtResultado);
     }//GEN-LAST:event_txtNuevoActionPerformed
+
+    private void btnSumaParesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSumaParesActionPerformed
+        e2.SumarPares(txtResultado, lblSumas);
+    }//GEN-LAST:event_btnSumaParesActionPerformed
+
+    private void btnSumaImparesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSumaImparesActionPerformed
+        e2.SumarImpares(txtResultado, lblSumas);
+    }//GEN-LAST:event_btnSumaImparesActionPerformed
     
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
@@ -192,7 +210,7 @@ public class FrmEjercicio02 extends javax.swing.JFrame {
     private javax.swing.JButton btnSumarNumeros;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JLabel lblOperacion;
+    private javax.swing.JLabel lblSumas;
     private javax.swing.JList<String> lstNumb;
     private javax.swing.JButton txtNuevo;
     private javax.swing.JTextField txtNumero;

@@ -4,6 +4,7 @@ import PKINTERFACES.IEjercicio02;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import javax.swing.DefaultListModel;
+import javax.swing.JLabel;
 import javax.swing.JList;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
@@ -43,14 +44,41 @@ public class Ejercicio02Calculos implements IEjercicio02 {
     }
 
     @Override
-    public void SumarNumeros(JTextField num) {
+    public void SumarNumeros(JTextField num,  JLabel sumar) {
         int suma = 0;
         for (int i = 0; i < dlm.size(); i++) {
             suma += (int)dlm.get(i);
         }
         num.setText("" + suma);
+        sumar.setText("Suma de todos los numeros:");
     }
 
+    @Override
+    public void SumarPares(JTextField numero,  JLabel sumarPar) {
+        int sumPar = 0;
+        for (int i = 0; i < dlm.size(); i++) {
+            int num =   Integer.parseInt(dlm.getElementAt(i).toString());
+            if (num % 2 == 0) {
+                sumPar += num;
+            }
+        }
+        numero.setText("" + sumPar);
+        sumarPar.setText("Suma de numeros pares:");
+    }
+
+    @Override
+    public void SumarImpares(JTextField numero,  JLabel sumarImp) {
+        int sumImp = 0;
+        for (int i = 0; i < dlm.size(); i++) {
+            int num =   Integer.parseInt(dlm.getElementAt(i).toString());
+            if (num % 2 == 1) {
+                sumImp += num;
+            }
+        }
+        numero.setText("" + sumImp);
+        sumarImp.setText("Suma de numeros impares:");
+    }
+    
     @Override
     public void OrdernarAscendente() {
         int ascen = 0;  
@@ -64,5 +92,11 @@ public class Ejercicio02Calculos implements IEjercicio02 {
                 }
             }
         }
+    }
+
+    @Override
+    public void Limpiar(JTextField txt) {
+        dlm.clear();
+        txt.setText("");
     }
 }
