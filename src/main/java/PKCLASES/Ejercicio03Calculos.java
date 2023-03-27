@@ -2,8 +2,12 @@
 package PKCLASES;
 
 import PKINTERFACES.IEjercicio03;
+import java.awt.Image;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
+import javax.swing.Icon;
+import javax.swing.ImageIcon;
+import javax.swing.JLabel;
 import javax.swing.JTextField;
 
 public class Ejercicio03Calculos implements IEjercicio03 {
@@ -17,7 +21,7 @@ public class Ejercicio03Calculos implements IEjercicio03 {
                 if(tecla>=65 && tecla<=90 || tecla>=97 && tecla<=122 ||
                          tecla==32 || tecla==8 || tecla==10){
                 }else{
-                    e.consume();// no permitir el ingreso de teclas
+                    e.consume();
                 }
             }            
         });
@@ -35,5 +39,13 @@ public class Ejercicio03Calculos implements IEjercicio03 {
                 }
             }
         });
+    }
+
+    @Override
+    public void MostrarIMG(JLabel img) {
+        ImageIcon icono = new ImageIcon("src/main/java/PKIMAGENES" + "/E03ComercialTextil" + ".jpg");
+        Icon icon = new ImageIcon(icono.getImage().getScaledInstance(
+                  img.getWidth(), img.getHeight(), Image.SCALE_DEFAULT));
+        img.setIcon(icon);
     }
 }

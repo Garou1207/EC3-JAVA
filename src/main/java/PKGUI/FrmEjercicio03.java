@@ -11,10 +11,9 @@ public class FrmEjercicio03 extends javax.swing.JFrame {
     public FrmEjercicio03() {
         initComponents();
         setLocationRelativeTo(null);
-        
         e3.ValidarNumeros(txtHorasTrabajadas);
         e3.ValidarLetras(txtNombres);
-        
+        e3.MostrarIMG(lblImagen);
     }
 
     @SuppressWarnings("unchecked")
@@ -138,8 +137,18 @@ public class FrmEjercicio03 extends javax.swing.JFrame {
         txtPagoNeto.setEditable(false);
 
         btnNuevo.setText("NUEVO");
+        btnNuevo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnNuevoActionPerformed(evt);
+            }
+        });
 
         btnCalcular.setText("CALCULAR");
+        btnCalcular.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCalcularActionPerformed(evt);
+            }
+        });
 
         btnSalir.setText("SALIR");
         btnSalir.addActionListener(new java.awt.event.ActionListener() {
@@ -149,7 +158,7 @@ public class FrmEjercicio03 extends javax.swing.JFrame {
         });
 
         lblImagen.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblImagen.setText("lblImagen");
+        lblImagen.setText("Imagen");
         lblImagen.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
 
         txtBonificacion.setEditable(false);
@@ -274,10 +283,18 @@ public class FrmEjercicio03 extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
-        FrmPrincipal frm=new FrmPrincipal();
+        FrmPrincipal frm = new FrmPrincipal();
         frm.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btnSalirActionPerformed
+
+    private void btnNuevoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNuevoActionPerformed
+        
+    }//GEN-LAST:event_btnNuevoActionPerformed
+
+    private void btnCalcularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCalcularActionPerformed
+
+    }//GEN-LAST:event_btnCalcularActionPerformed
   
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
