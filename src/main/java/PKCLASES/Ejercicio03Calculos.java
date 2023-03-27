@@ -6,11 +6,10 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
-import java.text.SimpleDateFormat;
-import java.util.Date;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
-import javax.swing.JFormattedTextField;
 import javax.swing.JLabel;
 import javax.swing.JRadioButton;
 import javax.swing.JTextField;
@@ -20,6 +19,7 @@ public class Ejercicio03Calculos implements IEjercicio03 {
     private int hTrabajadas;
     private double bHora;
     private double pTotal;
+    private double boni;
     
     public int gethTrabajadas() {
         return hTrabajadas;
@@ -32,6 +32,12 @@ public class Ejercicio03Calculos implements IEjercicio03 {
     }
     public double getpTotal() {
         return pTotal;
+    }
+    public double getBoni() {
+        return boni;
+    }
+    public void setBoni(double boni) {
+        this.boni = boni;
     }
     
     @Override
@@ -98,13 +104,8 @@ public class Ejercicio03Calculos implements IEjercicio03 {
     }
   
     @Override
-    public void PagoTotal() {
-        pTotal = hTrabajadas * bHora;
-    }
-
-    @Override
     public void ValidarAnios(JTextField txtA) {
-       txtA.addKeyListener(new KeyAdapter() {
+        txtA.addKeyListener(new KeyAdapter() {
             @Override
             public void keyTyped(KeyEvent e) {
                 int tecla = (int)e.getKeyChar();
@@ -114,10 +115,27 @@ public class Ejercicio03Calculos implements IEjercicio03 {
                 }
             }
         });
-       SimpleDateFormat dateFormat = new SimpleDateFormat("dd/mm/yyyy");
-        Date fechaActual = new Date();
-        String fechaActualTexto = dateFormat.format(fechaActual);
+        DateTimeFormatter dateFormat = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+        LocalDate fechaActual = LocalDate.now();
+        String fechaActualTexto = fechaActual.format(dateFormat);
         txtA.setText(fechaActualTexto);
     }
-        
+    
+    @Override
+    public void PagoTotal() {
+        pTotal = hTrabajadas * bHora;
+    }
+
+    @Override
+    public void Bonificacion(JTextField txtA) {
+        boni = 0;
+        String fechaIngresadaTexto = txtA.getText();
+        int anioIngresado = Integer.parseInt(fechaIngresadaTexto.substring(6));
+        LocalDate fechaActual = LocalDate.now();
+        int anioActual = fechaActual.getYear();
+        int anio = anioActual - anioIngresado;
+        if (anio > 5) {
+            boni = pTotal * 0.05;
+        } 
+    }
 }

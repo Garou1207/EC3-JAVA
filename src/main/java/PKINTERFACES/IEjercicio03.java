@@ -14,4 +14,5 @@ public interface IEjercicio03 {
     void BHHilanderia(JRadioButton hil, JTextField txt);
     void BHTintoleria(JRadioButton tin, JTextField txt);
     void PagoTotal();
+    void Bonificacion(JTextField txtA);
 }
