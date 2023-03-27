@@ -13,7 +13,7 @@ public class Ejercicio01Calculos implements IEjercicio01{
     private int anio;
     private int dia;
     
-        public int getAnio() {
+    public int getAnio() {
         return anio;
     }
     public void setAnio(int Anio) {
