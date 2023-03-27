@@ -6,20 +6,17 @@ import PKCLASES.Ejercicio03Calculos;
 
 public class FrmEjercicio03 extends javax.swing.JFrame {
 
-    Ejercicio03Calculos e3; 
+    Ejercicio03Calculos e3 = new Ejercicio03Calculos();
     
     public FrmEjercicio03() {
         initComponents();
         setLocationRelativeTo(null);
         
-        e3 = new Ejercicio03Calculos();
-        e3.ValidarSoloNumeros(txtHorasTrabajadas);
-        e3 = new Ejercicio03Calculos();
-        e3.ValidarSoloLetras(txtNombres);
+        e3.ValidarNumeros(txtHorasTrabajadas);
+        e3.ValidarLetras(txtNombres);
         
     }
 
-   
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {

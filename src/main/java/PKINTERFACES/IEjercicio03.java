@@ -6,9 +6,7 @@ import javax.swing.JTextField;
 
 public interface IEjercicio03 {
     
-    void ValidarSoloLetras(JTextField txtN);
-    void ValidarSoloNumeros(JTextField txtH);
-    void AgregarNum (int numero);
-    void AgregarNom (String nombre);
+    void ValidarLetras(JTextField txtN);
+    void ValidarNumeros(JTextField txtH);
     
 }
