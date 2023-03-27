@@ -11,5 +11,5 @@ public interface IEjercicio02 {
     void SumarPares(JTextField numero, JLabel sumarPar);
     void SumarImpares(JTextField numero, JLabel sumarImp);
     void OrdernarAscendente();
-    void Limpiar(JTextField txt);
+    void Limpiar(JTextField txt, JLabel sumar);
 }

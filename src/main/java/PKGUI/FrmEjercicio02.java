@@ -1,6 +1,7 @@
 package PKGUI;
 
 import PKCLASES.Ejercicio02Calculos;
+import javax.swing.JLabel;
 
 public class FrmEjercicio02 extends javax.swing.JFrame {
     
@@ -77,6 +78,7 @@ public class FrmEjercicio02 extends javax.swing.JFrame {
         });
 
         txtResultado.setEditable(false);
+        txtResultado.setText("0");
 
         txtNuevo.setText("Nuevo");
         txtNuevo.addActionListener(new java.awt.event.ActionListener() {
@@ -94,14 +96,15 @@ public class FrmEjercicio02 extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel1)
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addComponent(lblSumas)
+                                .addGap(0, 0, Short.MAX_VALUE)
+                                .addComponent(lblSumas, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(txtResultado, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                            .addComponent(txtNumero, javax.swing.GroupLayout.Alignment.TRAILING))
-                        .addGap(18, 18, 18)
+                            .addComponent(txtNumero, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 18, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(btnSumarNumeros, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(btnSumaPares, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -158,7 +161,7 @@ public class FrmEjercicio02 extends javax.swing.JFrame {
     }//GEN-LAST:event_btnOrdenarNumerosActionPerformed
 
     private void txtNuevoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNuevoActionPerformed
-        e2.Limpiar(txtResultado);
+        e2.Limpiar(txtResultado, lblSumas);
     }//GEN-LAST:event_txtNuevoActionPerformed
 
     private void btnSumaParesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSumaParesActionPerformed

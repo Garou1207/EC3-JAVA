@@ -44,7 +44,7 @@ public class Ejercicio02Calculos implements IEjercicio02 {
     }
 
     @Override
-    public void SumarNumeros(JTextField num,  JLabel sumar) {
+    public void SumarNumeros(JTextField num, JLabel sumar) {
         int suma = 0;
         for (int i = 0; i < dlm.size(); i++) {
             suma += (int)dlm.get(i);
@@ -54,7 +54,7 @@ public class Ejercicio02Calculos implements IEjercicio02 {
     }
 
     @Override
-    public void SumarPares(JTextField numero,  JLabel sumarPar) {
+    public void SumarPares(JTextField numero, JLabel sumarPar) {
         int sumPar = 0;
         for (int i = 0; i < dlm.size(); i++) {
             int num =   Integer.parseInt(dlm.getElementAt(i).toString());
@@ -67,7 +67,7 @@ public class Ejercicio02Calculos implements IEjercicio02 {
     }
 
     @Override
-    public void SumarImpares(JTextField numero,  JLabel sumarImp) {
+    public void SumarImpares(JTextField numero, JLabel sumarImp) {
         int sumImp = 0;
         for (int i = 0; i < dlm.size(); i++) {
             int num =   Integer.parseInt(dlm.getElementAt(i).toString());
@@ -95,8 +95,9 @@ public class Ejercicio02Calculos implements IEjercicio02 {
     }
 
     @Override
-    public void Limpiar(JTextField txt) {
+    public void Limpiar(JTextField txt,  JLabel sumar) {
         dlm.clear();
         txt.setText("");
+        sumar.setText("Suma de todos los numeros:");
     }
 }
