@@ -43,11 +43,26 @@ public class Ejercicio02Calculos implements IEjercicio02 {
     }
 
     @Override
-    public void sumarNumeros(JTextField num) {
+    public void SumarNumeros(JTextField num) {
         int suma = 0;
         for (int i = 0; i < dlm.size(); i++) {
             suma += (int)dlm.get(i);
         }
         num.setText("" + suma);
+    }
+
+    @Override
+    public void OrdernarAscendente() {
+        int ascen = 0;  
+        for (int i = 0; i < dlm.size(); i++) {
+            for (int j = 1; j < dlm.size() - i; j++) {
+                if (Integer.parseInt(dlm.getElementAt(j-1).toString()) > 
+                        Integer.parseInt(dlm.getElementAt(j).toString())) {
+                    ascen = Integer.parseInt(dlm.getElementAt(j-1).toString());
+                    dlm.set(j-1, dlm.getElementAt(j));
+                    dlm.set(j, ascen);
+                }
+            }
+        }
     }
 }

@@ -60,6 +60,11 @@ public class FrmEjercicio02 extends javax.swing.JFrame {
         });
 
         btnOrdenarNumeros.setText("Ordenar Números");
+        btnOrdenarNumeros.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnOrdenarNumerosActionPerformed(evt);
+            }
+        });
 
         txtResultado.setEditable(false);
 
@@ -139,8 +144,12 @@ public class FrmEjercicio02 extends javax.swing.JFrame {
     }//GEN-LAST:event_btnFinalizarActionPerformed
 
     private void btnSumarNumerosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSumarNumerosActionPerformed
-        e2.sumarNumeros(txtResultado);
+        e2.SumarNumeros(txtResultado);
     }//GEN-LAST:event_btnSumarNumerosActionPerformed
+
+    private void btnOrdenarNumerosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnOrdenarNumerosActionPerformed
+        e2.OrdernarAscendente();
+    }//GEN-LAST:event_btnOrdenarNumerosActionPerformed
     
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
