@@ -132,8 +132,10 @@ public class FrmEjercicio03 extends javax.swing.JFrame {
         );
 
         txtAFP.setEditable(false);
+        txtAFP.setText("0");
 
         txtFaltasT.setEditable(false);
+        txtFaltasT.setText("0");
 
         jLabel8.setText("Pago Neto:");
 
@@ -300,10 +302,13 @@ public class FrmEjercicio03 extends javax.swing.JFrame {
 
     private void btnCalcularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCalcularActionPerformed
         e3.sethTrabajadas(Integer.parseInt(txtHorasTrabajadas.getText()));
-        e3.PagoTotal();
-        e3.Bonificacion(txtFechaIngreso);
+        e3.PagoTotal();  e3.Bonificacion(txtFechaIngreso);
+        e3.Descuentos(chkAFP, chkFaltasT); e3.PagoNeto();
         txtPagoTotal.setText(""+ e3.getpTotal());
         txtBonificacion.setText("" + e3.getBoni());
+        txtAFP.setText("" + e3.getAFP());
+        txtFaltasT.setText("" + e3.getFaytar());
+        txtPagoNeto.setText("" + e3.getPagoNeto());
     }//GEN-LAST:event_btnCalcularActionPerformed
   
     public static void main(String args[]) {

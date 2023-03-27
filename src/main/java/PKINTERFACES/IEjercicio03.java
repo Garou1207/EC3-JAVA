@@ -1,5 +1,6 @@
 package PKINTERFACES;
 
+import javax.swing.JCheckBox;
 import javax.swing.JLabel;
 import javax.swing.JRadioButton;
 import javax.swing.JTextField;
@@ -15,4 +16,6 @@ public interface IEjercicio03 {
     void BHTintoleria(JRadioButton tin, JTextField txt);
     void PagoTotal();
     void Bonificacion(JTextField txtA);
+    void Descuentos(JCheckBox  afp, JCheckBox  fyT);
+    void PagoNeto();
 }

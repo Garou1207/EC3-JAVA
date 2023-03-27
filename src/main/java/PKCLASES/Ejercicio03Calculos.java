@@ -10,6 +10,7 @@ import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
+import javax.swing.JCheckBox;
 import javax.swing.JLabel;
 import javax.swing.JRadioButton;
 import javax.swing.JTextField;
@@ -20,6 +21,9 @@ public class Ejercicio03Calculos implements IEjercicio03 {
     private double bHora;
     private double pTotal;
     private double boni;
+    private double AFP;
+    private double faytar;
+    private double pagoNeto;
     
     public int gethTrabajadas() {
         return hTrabajadas;
@@ -38,6 +42,15 @@ public class Ejercicio03Calculos implements IEjercicio03 {
     }
     public void setBoni(double boni) {
         this.boni = boni;
+    }
+        public double getAFP() {
+        return AFP;
+    }
+    public double getFaytar() {
+        return faytar;
+    }
+    public double getPagoNeto() {
+        return pagoNeto;
     }
     
     @Override
@@ -137,5 +150,20 @@ public class Ejercicio03Calculos implements IEjercicio03 {
         if (anio > 5) {
             boni = pTotal * 0.05;
         } 
+    }
+
+    @Override
+    public void Descuentos(JCheckBox  afp, JCheckBox  fyT) {
+         AFP = 0;
+         faytar = 0;
+        if (afp.isSelected()) 
+            AFP = pTotal * 0.11;
+        if (fyT.isSelected()) 
+            faytar = pTotal * 0.16;
+    }
+
+    @Override
+    public void PagoNeto() {
+        pagoNeto = pTotal + boni - (AFP + faytar);
     }
 }
