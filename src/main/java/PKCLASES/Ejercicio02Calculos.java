@@ -11,11 +11,11 @@ import javax.swing.JTextField;
 public class Ejercicio02Calculos implements IEjercicio02 {
     
     DefaultListModel dlm = new DefaultListModel();
-
+    
     public Ejercicio02Calculos(JList jl) {
         jl.setModel(dlm);
     }
-
+    
     @Override
     public void AgregarN(int numero) {
         if (dlm.contains(numero)) {
@@ -40,5 +40,14 @@ public class Ejercicio02Calculos implements IEjercicio02 {
                     e.consume();
             }
         });
+    }
+
+    @Override
+    public void sumarNumeros(JTextField num) {
+        int suma = 0;
+        for (int i = 0; i < dlm.size(); i++) {
+            suma += (int)dlm.get(i);
+        }
+        num.setText("" + suma);
     }
 }

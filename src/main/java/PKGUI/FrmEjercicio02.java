@@ -22,7 +22,7 @@ public class FrmEjercicio02 extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         lstNumb = new javax.swing.JList<>();
         lblOperacion = new javax.swing.JLabel();
-        btnSumaNumeros = new javax.swing.JButton();
+        btnSumarNumeros = new javax.swing.JButton();
         btnSumaPares = new javax.swing.JButton();
         btnSumaImpares = new javax.swing.JButton();
         btnFinalizar = new javax.swing.JButton();
@@ -41,10 +41,10 @@ public class FrmEjercicio02 extends javax.swing.JFrame {
 
         lblOperacion.setText("Suma de Numeros:");
 
-        btnSumaNumeros.setText("Sumar Números");
-        btnSumaNumeros.addActionListener(new java.awt.event.ActionListener() {
+        btnSumarNumeros.setText("Sumar Números");
+        btnSumarNumeros.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnSumaNumerosActionPerformed(evt);
+                btnSumarNumerosActionPerformed(evt);
             }
         });
 
@@ -60,6 +60,8 @@ public class FrmEjercicio02 extends javax.swing.JFrame {
         });
 
         btnOrdenarNumeros.setText("Ordenar Números");
+
+        txtResultado.setEditable(false);
 
         btnRegresar.setText("Regresar");
         btnRegresar.addActionListener(new java.awt.event.ActionListener() {
@@ -87,7 +89,7 @@ public class FrmEjercicio02 extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(btnRegresar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(btnSumaNumeros, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btnSumarNumeros, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(btnSumaPares, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(btnSumaImpares, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(btnFinalizar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -106,7 +108,7 @@ public class FrmEjercicio02 extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jScrollPane1))
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(btnSumaNumeros)
+                        .addComponent(btnSumarNumeros)
                         .addGap(18, 18, 18)
                         .addComponent(btnSumaPares)
                         .addGap(18, 18, 18)
@@ -136,9 +138,9 @@ public class FrmEjercicio02 extends javax.swing.JFrame {
         dispose();
     }//GEN-LAST:event_btnFinalizarActionPerformed
 
-    private void btnSumaNumerosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSumaNumerosActionPerformed
-        
-    }//GEN-LAST:event_btnSumaNumerosActionPerformed
+    private void btnSumarNumerosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSumarNumerosActionPerformed
+        e2.sumarNumeros(txtResultado);
+    }//GEN-LAST:event_btnSumarNumerosActionPerformed
     
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
@@ -178,8 +180,8 @@ public class FrmEjercicio02 extends javax.swing.JFrame {
     private javax.swing.JButton btnOrdenarNumeros;
     private javax.swing.JButton btnRegresar;
     private javax.swing.JButton btnSumaImpares;
-    private javax.swing.JButton btnSumaNumeros;
     private javax.swing.JButton btnSumaPares;
+    private javax.swing.JButton btnSumarNumeros;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lblOperacion;
