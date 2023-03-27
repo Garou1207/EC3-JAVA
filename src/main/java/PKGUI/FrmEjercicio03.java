@@ -6,12 +6,16 @@ import PKCLASES.Ejercicio03Calculos;
 
 public class FrmEjercicio03 extends javax.swing.JFrame {
 
-    Ejercicio03Calculos e3 = new Ejercicio03Calculos(); //new
+    Ejercicio03Calculos e3; 
     
     public FrmEjercicio03() {
         initComponents();
         setLocationRelativeTo(null);
         
+        e3 = new Ejercicio03Calculos();
+        e3.ValidarSoloNumeros(txtHorasTrabajadas);
+        e3 = new Ejercicio03Calculos();
+        e3.ValidarSoloLetras(txtNombres);
         
     }
 
