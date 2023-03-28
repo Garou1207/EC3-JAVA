@@ -401,19 +401,27 @@ public class FrmEjercicio04 extends javax.swing.JFrame {
 
     private void btnAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarActionPerformed
         
-         if(cboEmpleados.getSelectedIndex() == 0) 
+        if(cboEmpleados.getSelectedIndex() == 0) {
             JOptionPane.showMessageDialog(null, "Debe seleccionar un empleado");
-        if(cboClientes.getSelectedIndex() == 0) 
+        }
+        if(cboClientes.getSelectedIndex() == 0) {
             JOptionPane.showMessageDialog(null, "Debe seleccionar un cliente");
-        if(cboarticulos.getSelectedIndex() == 0) 
+        } 
+        if(cboarticulos.getSelectedIndex() == 0) {
             JOptionPane.showMessageDialog(null, "Debe seleccionar un articulo");
-        
+        }
+        String producto = cboarticulos.getSelectedItem().toString();
+        for (int i = 0; i < jtablaDetalle.getRowCount(); i++) {
+            if (jtablaDetalle.getValueAt(i, 0).equals(producto)) {
+                JOptionPane.showMessageDialog(null, "El producto ya ha sido agregado a la venta");
+                return;
+            }
+        }
         if((int)jSpinner1.getValue() == 0) {
             JOptionPane.showMessageDialog(null, "Por favor ingrese una cantidad");
             return;
         }
         
-        String producto = cboarticulos.getSelectedItem().toString();
         double precio = Double.parseDouble(txtprecio.getText());
         int cantidad = (int)jSpinner1.getValue();
         
@@ -443,7 +451,6 @@ public class FrmEjercicio04 extends javax.swing.JFrame {
         e4d.setImporte(importeTexto);
         e4d.setIgv(igvTexto);
         e4d.setTotal(totalTexto);
-        
     }//GEN-LAST:event_btnAgregarActionPerformed
 
     private void btnQuitarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnQuitarActionPerformed

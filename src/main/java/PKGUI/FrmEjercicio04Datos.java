@@ -4,7 +4,7 @@ import PKCLASES.Ejercicio04Datos;
 
 public class FrmEjercicio04Datos extends javax.swing.JFrame {
 
-    private Ejercicio04Datos e4d;
+    Ejercicio04Datos e4d = new Ejercicio04Datos();
     
     public FrmEjercicio04Datos(Ejercicio04Datos datos) {
         
