@@ -121,9 +121,10 @@ public class FrmPrincipal extends javax.swing.JFrame {
 
     }//GEN-LAST:event_btnSalirActionPerformed
 
-    // BOTÓN EJERCICIO 4
     private void btnEjercicio4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEjercicio4ActionPerformed
-
+        FrmEjercicio04 frm=new FrmEjercicio04();
+        frm.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_btnEjercicio4ActionPerformed
 
     private void btnEjercicio3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEjercicio3ActionPerformed

@@ -124,7 +124,7 @@ public class Ejercicio04Calculos {
         txtotalventa.setText(String.format(Locale.US, "%.2f", totalVenta));
     }
     
-    public static void limpiarCampos(JTextField[] contenidoText, JComboBox[] contenidoCombo, JTable[] contenidoTable, JCheckBox[] contenidoCheck, JSpinner contenidoSpinner)
+    public static void limpiarCampos(JTextField [] contenidoText, JComboBox[] contenidoCombo, JTable[] contenidoTable, JCheckBox[] contenidoCheck, JSpinner contenidoSpinner)
     {
     for (int i = 0; i < contenidoText.length; i++) {
         contenidoText[i].setText("0.00");
