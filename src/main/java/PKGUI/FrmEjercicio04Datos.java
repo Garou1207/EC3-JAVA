@@ -9,6 +9,7 @@ public class FrmEjercicio04Datos extends javax.swing.JFrame {
     public FrmEjercicio04Datos(Ejercicio04Datos datos) {
         
         initComponents();
+        setLocationRelativeTo(null);
         
         txtEmpleado.setEditable(false);
         txtCliente.setEditable(false);

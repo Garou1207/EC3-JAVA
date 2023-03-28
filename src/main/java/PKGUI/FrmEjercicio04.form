@@ -370,6 +370,9 @@
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="txtprecio">
+          <Properties>
+            <Property name="editable" type="boolean" value="false"/>
+          </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel9">
           <Properties>
@@ -528,8 +531,14 @@
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="txtnroproductos">
+          <Properties>
+            <Property name="editable" type="boolean" value="false"/>
+          </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="txttotalventa">
+          <Properties>
+            <Property name="editable" type="boolean" value="false"/>
+          </Properties>
         </Component>
         <Component class="javax.swing.JButton" name="btnCerrar">
           <Properties>

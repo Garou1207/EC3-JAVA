@@ -24,22 +24,14 @@ public class FrmEjercicio04 extends javax.swing.JFrame {
     public FrmEjercicio04() {
         initComponents();
         setLocationRelativeTo(null);
-        
         e4.actualizarFechaHora(lblReloj, lblfecha);
-        
         e4.agregarEmpleados(cboEmpleados);
         e4.agregarClientes(cboClientes);
         e4.agregarArticulos(cboarticulos);
-        e4.mostrarImagen("Informatica",jfoto);
-        
         e4t.AgregarColumnas(jtablaDetalle);
-        
+        e4.mostrarImagen("Informatica",jfoto);
         txtnroproductos.setText("0");
         txttotalventa.setText("0.00");
-        
-        txtprecio.setEditable(false);
-        txtnroproductos.setEditable(false);
-        txttotalventa.setEditable(false);
     }
 
     
@@ -181,6 +173,8 @@ public class FrmEjercicio04 extends javax.swing.JFrame {
 
         jLabel8.setText("Precio :");
 
+        txtprecio.setEditable(false);
+
         jLabel9.setText("Cantidad :");
 
         jSpinner1.setModel(new javax.swing.SpinnerNumberModel(0, 0, null, 1));
@@ -273,6 +267,10 @@ public class FrmEjercicio04 extends javax.swing.JFrame {
         jLabel11.setText("Numero de Productos :");
 
         jLabel12.setText("Total de Venta :");
+
+        txtnroproductos.setEditable(false);
+
+        txttotalventa.setEditable(false);
 
         btnCerrar.setText("Cerrar");
         btnCerrar.addActionListener(new java.awt.event.ActionListener() {

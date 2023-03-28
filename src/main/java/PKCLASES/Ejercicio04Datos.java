@@ -56,5 +56,4 @@ private String fechaVenta;
 private String importe;
 private String igv;
 private String total;
-    
 }
