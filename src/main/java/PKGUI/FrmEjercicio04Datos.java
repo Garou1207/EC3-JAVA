@@ -4,48 +4,49 @@ import PKCLASES.Ejercicio04Datos;
 
 public class FrmEjercicio04Datos extends javax.swing.JFrame {
 
-    private Ejercicio04Datos datos;
+    private static Ejercicio04Datos datos;
     
-    public FrmEjercicio04Datos() {
+    public FrmEjercicio04Datos(Ejercicio04Datos datos) {
+        
         initComponents();
-        setLocationRelativeTo(null);
+        
+        txtEmpleado.setEditable(false);
+        txtCliente.setEditable(false);
+        txtFechaVenta.setEditable(false);
+        txtImporte.setEditable(false);
+        txtIgv.setEditable(false);
+        txtTotal.setEditable(false);
+        
         this.datos = datos;
-        txtEmpleado.setText(datos.getEmpleado());
+        txtEmpleado.setText(datos.getEmpleadoSeleccionado());
+        txtCliente.setText(datos.getClienteSeleccionado());
+        txtFechaVenta.setText(datos.getFechaVenta());
+        txtImporte.setText(datos.getImporte());
+        txtIgv.setText(datos.getIgv());
+        txtTotal.setText(datos.getTotal());
+        
     }
-
     
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
+        btnCerrar = new javax.swing.JButton();
         txtEmpleado = new javax.swing.JTextField();
+        jLabel1 = new javax.swing.JLabel();
         txtCliente = new javax.swing.JTextField();
+        jLabel2 = new javax.swing.JLabel();
+        txtFechaVenta = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
-        txtFecha = new javax.swing.JTextField();
-        txtImporte = new javax.swing.JTextField();
-        txtIgv = new javax.swing.JTextField();
-        txtTotal = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
+        txtImporte = new javax.swing.JTextField();
+        txtIgv = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
-        btnCerrar = new javax.swing.JButton();
+        txtTotal = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-
-        jLabel1.setText("Empleado :");
-
-        jLabel2.setText("Cliente :");
-
-        jLabel3.setText("Fecha de Venta :");
-
-        jLabel4.setText("Importe :");
-
-        jLabel5.setText("Igv :");
-
-        jLabel6.setText("Total :");
 
         btnCerrar.setText("Cerrar");
         btnCerrar.addActionListener(new java.awt.event.ActionListener() {
@@ -54,83 +55,87 @@ public class FrmEjercicio04Datos extends javax.swing.JFrame {
             }
         });
 
-        jLabel7.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel7.setText("Datos Ingresados en la Venta");
+        jLabel1.setText("Empleado :");
+
+        jLabel2.setText("Cliente :");
+
+        jLabel3.setText("Fecha de Venta :");
+
+        jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel4.setText("Datos Ingresados en la Venta");
+
+        jLabel5.setText("Importe :");
+
+        jLabel6.setText("Igv :");
+
+        jLabel7.setText("Total :");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addGap(100, 100, 100)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel4)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(103, 103, 103)
-                        .addComponent(jLabel7))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(94, 94, 94)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jLabel3)
-                                    .addComponent(jLabel1)
-                                    .addComponent(jLabel2)
-                                    .addComponent(jLabel4)
-                                    .addComponent(jLabel5)
-                                    .addComponent(jLabel6))
-                                .addGap(28, 28, 28)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(txtEmpleado)
-                                    .addComponent(txtCliente)
-                                    .addComponent(txtFecha)
-                                    .addComponent(txtImporte)
-                                    .addComponent(txtIgv)
-                                    .addComponent(txtTotal, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(104, 104, 104)
-                                .addComponent(btnCerrar)))))
-                .addContainerGap(107, Short.MAX_VALUE))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel1)
+                            .addComponent(jLabel2)
+                            .addComponent(jLabel3)
+                            .addComponent(jLabel6)
+                            .addComponent(jLabel5)
+                            .addComponent(jLabel7))
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(txtTotal, javax.swing.GroupLayout.DEFAULT_SIZE, 121, Short.MAX_VALUE)
+                            .addComponent(txtIgv)
+                            .addComponent(txtFechaVenta)
+                            .addComponent(txtEmpleado)
+                            .addComponent(btnCerrar)
+                            .addComponent(txtCliente)
+                            .addComponent(txtImporte))))
+                .addContainerGap(111, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(19, 19, 19)
-                .addComponent(jLabel7)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(25, 25, 25)
+                .addComponent(jLabel4)
                 .addGap(31, 31, 31)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(6, 6, 6)
-                        .addComponent(jLabel1))
-                    .addComponent(txtEmpleado, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtEmpleado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel1))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel2))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel3)
-                    .addComponent(txtFecha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtFechaVenta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel3))
                 .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtImporte, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel4))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel5)
+                    .addComponent(txtImporte, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtIgv, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel5))
+                    .addComponent(jLabel6))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtTotal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel6))
-                .addGap(38, 38, 38)
+                    .addComponent(jLabel7))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 42, Short.MAX_VALUE)
                 .addComponent(btnCerrar)
-                .addContainerGap(26, Short.MAX_VALUE))
+                .addGap(40, 40, 40))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnCerrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCerrarActionPerformed
-        Ejercicio04Datos.cerrarFormulario(this);
+         dispose();
     }//GEN-LAST:event_btnCerrarActionPerformed
 
     
@@ -158,13 +163,11 @@ public class FrmEjercicio04Datos extends javax.swing.JFrame {
         }
         //</editor-fold>
         //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new FrmEjercicio04Datos().setVisible(true);
+                new FrmEjercicio04Datos(datos).setVisible(true);
             }
         });
     }
@@ -180,7 +183,7 @@ public class FrmEjercicio04Datos extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JTextField txtCliente;
     private javax.swing.JTextField txtEmpleado;
-    private javax.swing.JTextField txtFecha;
+    private javax.swing.JTextField txtFechaVenta;
     private javax.swing.JTextField txtIgv;
     private javax.swing.JTextField txtImporte;
     private javax.swing.JTextField txtTotal;
