@@ -400,14 +400,13 @@ public class FrmEjercicio04 extends javax.swing.JFrame {
         
         if(cboEmpleados.getSelectedIndex() == 0) {
             JOptionPane.showMessageDialog(null, "Debe seleccionar un empleado");
-        } else if(cboClientes.getSelectedIndex() == 0) {
+        }
+        if(cboClientes.getSelectedIndex() == 0) {
             JOptionPane.showMessageDialog(null, "Debe seleccionar un cliente");
-        } else  if(cboarticulos.getSelectedIndex() == 0) {
-            JOptionPane.showMessageDialog(null, "Debe seleccionar un articulo");
-        } else  if((int)jSpinner1.getValue() == 0) {
-            JOptionPane.showMessageDialog(null, "Por favor ingrese una cantidad");
-            return;
         } 
+        if(cboarticulos.getSelectedIndex() == 0) {
+            JOptionPane.showMessageDialog(null, "Debe seleccionar un articulo");
+        }
         String producto = cboarticulos.getSelectedItem().toString();
         for (int i = 0; i < jtablaDetalle.getRowCount(); i++) {
             if (jtablaDetalle.getValueAt(i, 0).equals(producto)) {
@@ -415,6 +414,11 @@ public class FrmEjercicio04 extends javax.swing.JFrame {
                 return;
             }
         }
+        if((int)jSpinner1.getValue() == 0) {
+            JOptionPane.showMessageDialog(null, "Por favor ingrese una cantidad");
+            return;
+        }
+        
         double precio = Double.parseDouble(txtprecio.getText());
         int cantidad = (int)jSpinner1.getValue();
         
