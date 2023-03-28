@@ -14,7 +14,6 @@ import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JCheckBox;
 import javax.swing.JLabel;
-import javax.swing.JOptionPane;
 import javax.swing.JRadioButton;
 import javax.swing.JTextField;
 
@@ -157,14 +156,14 @@ public class Ejercicio03Calculos implements IEjercicio03 {
             faytar = pTotal * 0.16;
         pagoNeto = pTotal + boni - (AFP + faytar); // Pago Neto
     }
-    
+
     @Override
-    public void Nuevo(Container c, ButtonGroup bg, JCheckBox a, JCheckBox f) {
-        for (int i = 0; c.getComponents().length > i; i++) {
-            if (c.getComponents()[i] instanceof JTextField) {
-                ((JTextField)c.getComponents()[i]).setText("");
-            }
-        }
+    public void NuevoBotones(ButtonGroup bg, JCheckBox a, JCheckBox f) {
         bg.clearSelection(); a.setSelected(false); f.setSelected(false);
+    }
+
+    @Override
+    public void NuevoTextos(JTextField txt1, JTextField txt2, JTextField txt3, JTextField txt4) {
+        txt1.setText(""); txt2.setText(""); txt3.setText(""); txt4.setText("");
     }
 }
