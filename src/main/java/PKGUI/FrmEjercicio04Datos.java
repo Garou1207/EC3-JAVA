@@ -4,7 +4,7 @@ import PKCLASES.Ejercicio04Datos;
 
 public class FrmEjercicio04Datos extends javax.swing.JFrame {
 
-    private static Ejercicio04Datos datos;
+    private Ejercicio04Datos datos;
     
     public FrmEjercicio04Datos(Ejercicio04Datos datos) {
         
@@ -167,7 +167,7 @@ public class FrmEjercicio04Datos extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new FrmEjercicio04Datos(datos).setVisible(true);
+                //new FrmEjercicio04Datos(datos).setVisible(true);
             }
         });
     }

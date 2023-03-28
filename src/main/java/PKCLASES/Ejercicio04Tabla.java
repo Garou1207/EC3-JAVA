@@ -1,14 +1,16 @@
 package PKCLASES;
 
+import PKINTERFACES.IEjercicio04Datos;
 import javax.swing.JComboBox;
 import javax.swing.JOptionPane;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
-public class Ejercicio04Tabla {
+public class Ejercicio04Tabla implements IEjercicio04Datos{
     
-    static DefaultTableModel dfm = new DefaultTableModel();
-    public static void agregarColumnas(JTable jt)
+    DefaultTableModel dfm = new DefaultTableModel();
+    
+    public void agregarColumnas(JTable jt)
     {
         jt.setModel(dfm);
         dfm.setColumnCount(0);
@@ -26,7 +28,7 @@ public class Ejercicio04Tabla {
         
     }
     
-    public static void agregarArticulosTabla(JTable jt, JComboBox cboarticulos, double precio, int cantidad, double descuento, double total)
+    public void agregarArticulosTabla(JTable jt, JComboBox cboarticulos, double precio, int cantidad, double descuento, double total)
     {
         for (int i = 0; i < jt.getRowCount(); i++){
             if(dfm.getValueAt(i,0).equals(cboarticulos.getSelectedItem())){
@@ -38,7 +40,7 @@ public class Ejercicio04Tabla {
         dfm.addRow(new Object[]{cboarticulos.getSelectedItem(), precio, cantidad, descuento, total});  
     }
     
-    public static void quitarArticulosTabla(JTable jt) 
+    public  void quitarArticulosTabla(JTable jt) 
     {
     DefaultTableModel modelo = (DefaultTableModel) jt.getModel();
     int filaSeleccionada = jt.getSelectedRow();
@@ -47,7 +49,7 @@ public class Ejercicio04Tabla {
         }
     }
     
-    public static void cancelarArticulosTabla(JTable jt)
+    public  void cancelarArticulosTabla(JTable jt)
     {
         DefaultTableModel modelo = (DefaultTableModel) jt.getModel();
         modelo.setRowCount(0);

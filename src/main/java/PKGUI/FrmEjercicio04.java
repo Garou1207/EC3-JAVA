@@ -16,7 +16,7 @@ import javax.swing.table.DefaultTableModel;
 
 public class FrmEjercicio04 extends javax.swing.JFrame {
 
-    private static Ejercicio04Datos e4 = new Ejercicio04Datos();
+    private Ejercicio04Datos e4 = new Ejercicio04Datos();
     
     
     public FrmEjercicio04() {

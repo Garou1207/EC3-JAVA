@@ -1,6 +1,6 @@
 package PKCLASES;
 
-//Importar Funciones
+import PKINTERFACES.IEjercicio04;
 import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.text.SimpleDateFormat;
@@ -17,11 +17,9 @@ import javax.swing.JTextField;
 import javax.swing.Timer;
 import javax.swing.table.DefaultTableModel;
 
-
-public class Ejercicio04Calculos {
+public class Ejercicio04Calculos implements IEjercicio04{
     
-    public static void actualizarFechaHora(JLabel lblReloj, JLabel lblFecha) 
-    {
+    public  void actualizarFechaHora(JLabel lblReloj, JLabel lblFecha)  {
         Timer timer = new Timer(1000, (ActionEvent e) -> {
         Date date = new Date();
         SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yy");
@@ -35,22 +33,19 @@ public class Ejercicio04Calculos {
     timer.start();
     }
 
-    public static void agregarEmpleados(JComboBox cboEmpleados)
-    {
+    public  void agregarEmpleados(JComboBox cboEmpleados) {
         String[] empleados = { "Seleccione", "Juan Perez", "Maria Alarcon", "Jose Hernandez", "Julia Lopez", "Pedro Gomez" };
         cboEmpleados.setModel(new javax.swing.DefaultComboBoxModel<>(empleados));
         cboEmpleados.setSelectedIndex(0);
     }
 
-    public static void agregarClientes(JComboBox cboClientes)
-    {
+    public  void agregarClientes(JComboBox cboClientes) {
         String[] clientes = { "Seleccione", "Carlos Garcia", "Juana Rodrigez", "Ana Huaman", "Rodrigo Sanchez", "Mauro Castillo" };
         cboClientes.setModel(new javax.swing.DefaultComboBoxModel<>(clientes));
         cboClientes.setSelectedIndex(0);
     }
     
-    public static void agregarArticulos(JComboBox cboarticulos)
-    {
+    public  void agregarArticulos(JComboBox cboarticulos) {
         cboarticulos.removeAllItems();
         cboarticulos.addItem("Seleccione");
         cboarticulos.addItem("Cpu");
@@ -63,29 +58,25 @@ public class Ejercicio04Calculos {
         cboarticulos.addItem("Webcam");
     }
 
-    public static void mostrarImagen(String nombre, JLabel jfoto)
-    {
+    public  void mostrarImagen(String nombre, JLabel jfoto) {
         ImageIcon icono = new ImageIcon("src/main/java/PKIMAGENES/"+nombre+".jpg");
         Icon icon = new ImageIcon(icono.getImage().getScaledInstance(jfoto.getWidth(),jfoto.getHeight(),Image.SCALE_DEFAULT));
         jfoto.setIcon(icon);
     }
     
-    public static double obtenerPrecio(int indice)
-    {
+    public  double obtenerPrecio(int indice) {
         double[] precios={0.00,1600.55,800.50,120.34,500.50,200.50,140.20,180.50,80.50};
         return precios[indice];
     }
 
-    public static double obtenerDescuento(double precio, int descuento, int cantidad)
-    {
+    public  double obtenerDescuento(double precio, int descuento, int cantidad) {
         double precioOriginal = precio * cantidad;
         double porcentaje =  descuento / 100.0;
         double descuentoAplicado = precioOriginal * porcentaje;
         return descuentoAplicado;
     }
     
-    public static double obtenerTotal(double precio, int descuento, int cantidad)
-    {
+    public  double obtenerTotal(double precio, int descuento, int cantidad) {
         double precioOriginal = precio * cantidad;
         double porcentaje =  descuento / 100.0;
         double descuentoAplicado = precioOriginal * porcentaje;
@@ -93,9 +84,9 @@ public class Ejercicio04Calculos {
         return precioConDescuento;
     }
     
-    static DefaultTableModel dfm = new DefaultTableModel();
-    public static double obtenerTotalVenta(JTable jt)
-    {
+    DefaultTableModel dfm = new DefaultTableModel();
+    
+    public double obtenerTotalVenta(JTable jt)  {
         double sumatotal = 0;
             for(int i=0; i<jt.getRowCount(); i++){
                 sumatotal += (double)dfm.getValueAt(i,3);
@@ -103,16 +94,15 @@ public class Ejercicio04Calculos {
         return sumatotal;
     } 
     
-    public static double obtenerIgv(double precio, double igv) {
+    public double obtenerIgv(double precio, double igv) {
         return precio * igv;
     }
     
-    public static double obtenerTotalIgv(double importe, double igv) {
+    public double obtenerTotalIgv(double importe, double igv) {
         return importe - igv;
     }
 
-    public static void actualizarCampos(JTable jt, JTextField txtnroproductos, JTextField txtotalventa) 
-    {
+    public void actualizarCampos(JTable jt, JTextField txtnroproductos, JTextField txtotalventa) {
         DefaultTableModel modelo = (DefaultTableModel) jt.getModel();
         int nroProductos = modelo.getRowCount();
         double totalVenta = 0.0;
@@ -124,8 +114,8 @@ public class Ejercicio04Calculos {
         txtotalventa.setText(String.format(Locale.US, "%.2f", totalVenta));
     }
     
-    public static void limpiarCampos(JTextField [] contenidoText, JComboBox[] contenidoCombo, JTable[] contenidoTable, JCheckBox[] contenidoCheck, JSpinner contenidoSpinner)
-    {
+    public void limpiarCampos(JTextField [] contenidoText, JComboBox[] contenidoCombo, JTable[] 
+            contenidoTable, JCheckBox[] contenidoCheck, JSpinner contenidoSpinner) {
     for (int i = 0; i < contenidoText.length; i++) {
         contenidoText[i].setText("0.00");
     }
