@@ -2,6 +2,7 @@
 package PKGUI;
 
 import PKCLASES.Ejercicio03Calculos;
+import javax.swing.JOptionPane;
 
 
 public class FrmEjercicio03 extends javax.swing.JFrame {
@@ -299,6 +300,14 @@ public class FrmEjercicio03 extends javax.swing.JFrame {
     }//GEN-LAST:event_btnNuevoActionPerformed
 
     private void btnCalcularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCalcularActionPerformed
+        //Validaciones
+        if (txtNombres.getText().isEmpty()){
+            JOptionPane.showMessageDialog(this,"¡Debe Ingresar Nombres para proceder con el Cálculo!");
+        }else if(txtHorasTrabajadas.getText().isEmpty()){
+            JOptionPane.showMessageDialog(this,"¡Debe Ingresar Horas Trabajadas para proceder con el Cálculo!");
+        }else if(buttonGroup1.getSelection()==null){
+            JOptionPane.showMessageDialog(this,"¡Debe seleccionar por lo menos un botón de Sección!");
+        }else{
         e3.sethTrabajadas(Integer.parseInt(txtHorasTrabajadas.getText()));
         e3.Calcular(txtFechaIngreso, chkAFP, chkAFP, txtNombres, txtHorasTrabajadas);
         txtPagoTotal.setText(""+ e3.getpTotal());
@@ -306,6 +315,7 @@ public class FrmEjercicio03 extends javax.swing.JFrame {
         txtAFP.setText("" + e3.getAFP());
         txtFaltasT.setText("" + e3.getFaytar());
         txtPagoNeto.setText("" + e3.getPagoNeto());
+        }
     }//GEN-LAST:event_btnCalcularActionPerformed
   
     public static void main(String args[]) {
