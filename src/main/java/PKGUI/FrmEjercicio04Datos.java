@@ -4,7 +4,7 @@ import PKCLASES.Ejercicio04Datos;
 
 public class FrmEjercicio04Datos extends javax.swing.JFrame {
 
-    private Ejercicio04Datos datos;
+    private Ejercicio04Datos e4d;
     
     public FrmEjercicio04Datos(Ejercicio04Datos datos) {
         
@@ -17,7 +17,7 @@ public class FrmEjercicio04Datos extends javax.swing.JFrame {
         txtIgv.setEditable(false);
         txtTotal.setEditable(false);
         
-        this.datos = datos;
+        this.e4d = datos;
         txtEmpleado.setText(datos.getEmpleadoSeleccionado());
         txtCliente.setText(datos.getClienteSeleccionado());
         txtFechaVenta.setText(datos.getFechaVenta());

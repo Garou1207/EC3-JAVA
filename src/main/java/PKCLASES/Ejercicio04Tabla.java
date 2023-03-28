@@ -10,8 +10,8 @@ public class Ejercicio04Tabla implements IEjercicio04Datos{
     
     DefaultTableModel dfm = new DefaultTableModel();
     
-    public void agregarColumnas(JTable jt)
-    {
+    @Override
+    public void AgregarColumnas(JTable jt) {
         jt.setModel(dfm);
         dfm.setColumnCount(0);
         dfm.addColumn("Producto");
@@ -24,32 +24,29 @@ public class Ejercicio04Tabla implements IEjercicio04Datos{
         jt.getColumnModel().getColumn(2).setPreferredWidth(80);
         jt.getColumnModel().getColumn(3).setPreferredWidth(80);
         jt.getColumnModel().getColumn(4).setPreferredWidth(80);
-        
     }
-    
-    public void agregarArticulosTabla(JTable jt, JComboBox cboarticulos, double precio, int cantidad, double descuento, double total)
-    {
+
+    @Override
+    public void AgregarArticulosTabla(JTable jt, JComboBox cboarticulos, double precio, int cantidad, double descuento, double total) {
         for (int i = 0; i < jt.getRowCount(); i++){
             if(dfm.getValueAt(i,0).equals(cboarticulos.getSelectedItem())){
             JOptionPane.showMessageDialog(null,"El Producto ya existe");
             return;
             }
         }
-        
         dfm.addRow(new Object[]{cboarticulos.getSelectedItem(), precio, cantidad, descuento, total});  
     }
-    
-    public  void quitarArticulosTabla(JTable jt) 
-    {
-    DefaultTableModel modelo = (DefaultTableModel) jt.getModel();
-    int filaSeleccionada = jt.getSelectedRow();
-    if (filaSeleccionada != -1) {
-        modelo.removeRow(filaSeleccionada);
-        }
+
+    @Override
+    public void QuitarArticulosTabla(JTable jt) {
+        DefaultTableModel modelo = (DefaultTableModel) jt.getModel();
+        int filaSeleccionada = jt.getSelectedRow();
+        if (filaSeleccionada != -1) 
+            modelo.removeRow(filaSeleccionada);
     }
-    
-    public  void cancelarArticulosTabla(JTable jt)
-    {
+
+    @Override
+    public void CancelarArticulosTabla(JTable jt) {
         DefaultTableModel modelo = (DefaultTableModel) jt.getModel();
         modelo.setRowCount(0);
     }

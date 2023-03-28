@@ -16,21 +16,23 @@ import javax.swing.table.DefaultTableModel;
 
 public class FrmEjercicio04 extends javax.swing.JFrame {
 
-    private Ejercicio04Datos e4 = new Ejercicio04Datos();
+    Ejercicio04Datos e4d = new Ejercicio04Datos();
+    Ejercicio04Calculos e4 = new Ejercicio04Calculos();
+    Ejercicio04Tabla e4t = new Ejercicio04Tabla();
     
     
     public FrmEjercicio04() {
         initComponents();
         setLocationRelativeTo(null);
         
-        Ejercicio04Calculos.actualizarFechaHora(lblReloj, lblfecha);
+        e4.actualizarFechaHora(lblReloj, lblfecha);
         
-        Ejercicio04Calculos.agregarEmpleados(cboEmpleados);
-        Ejercicio04Calculos.agregarClientes(cboClientes);
-        Ejercicio04Calculos.agregarArticulos(cboarticulos);
-        Ejercicio04Calculos.mostrarImagen("Informatica",jfoto);
+        e4.agregarEmpleados(cboEmpleados);
+        e4.agregarClientes(cboClientes);
+        e4.agregarArticulos(cboarticulos);
+        e4.mostrarImagen("Informatica",jfoto);
         
-        Ejercicio04Tabla.agregarColumnas(jtablaDetalle);
+        e4t.AgregarColumnas(jtablaDetalle);
         
         txtnroproductos.setText("0");
         txttotalventa.setText("0.00");
@@ -417,8 +419,8 @@ public class FrmEjercicio04 extends javax.swing.JFrame {
         
         int descuentoSeleccionado = (chkDesc5.isSelected()) ? 5 : (chkDesc10.isSelected()) ? 10 : 0;
  
-        double descuento = Ejercicio04Calculos.obtenerDescuento(precio, descuentoSeleccionado, cantidad);
-        double total = Ejercicio04Calculos.obtenerTotal(precio,descuentoSeleccionado, cantidad);
+        double descuento = e4.obtenerDescuento(precio, descuentoSeleccionado, cantidad);
+        double total = e4.obtenerTotal(precio,descuentoSeleccionado, cantidad);
         
         String descuentoFormateado = String.format(Locale.US, "%.2f", descuento);
         String totalFormateado = String.format(Locale.US,"%.2f", total);
@@ -428,19 +430,19 @@ public class FrmEjercicio04 extends javax.swing.JFrame {
         DefaultTableModel modelo = (DefaultTableModel) jtablaDetalle.getModel();
         modelo.addRow(new Object[]{producto, precioFormateado, cantidad, descuentoFormateado, totalFormateado});
         
-        Ejercicio04Calculos.actualizarCampos(jtablaDetalle, txtnroproductos, txttotalventa);
+        e4.actualizarCampos(jtablaDetalle, txtnroproductos, txttotalventa);
         
         double importe = Double.parseDouble(txttotalventa.getText());
-        double igv = Ejercicio04Calculos.obtenerIgv(importe, 0.18);
-        double totalConIgv = Ejercicio04Calculos.obtenerTotalIgv(importe, igv);
+        double igv = e4.obtenerIgv(importe, 0.18);
+        double totalConIgv = e4.obtenerTotalIgv(importe, igv);
         
         String importeTexto = String.format(Locale.US, "%.2f", importe);
         String igvTexto = String.format(Locale.US, "%.2f", igv);
         String totalTexto = String.format(Locale.US, "%.2f", totalConIgv);
         
-        e4.setImporte(importeTexto);
-        e4.setIgv(igvTexto);
-        e4.setTotal(totalTexto);
+        e4d.setImporte(importeTexto);
+        e4d.setIgv(igvTexto);
+        e4d.setTotal(totalTexto);
         
     }//GEN-LAST:event_btnAgregarActionPerformed
 
@@ -448,21 +450,21 @@ public class FrmEjercicio04 extends javax.swing.JFrame {
         if(jtablaDetalle.getRowCount() == 0) 
             JOptionPane.showMessageDialog(null, "No hay productos para quitar");
 
-        Ejercicio04Tabla.quitarArticulosTabla(jtablaDetalle);
-        Ejercicio04Calculos.actualizarCampos(jtablaDetalle, txtnroproductos, txttotalventa);
+        e4t.QuitarArticulosTabla(jtablaDetalle);
+        e4.actualizarCampos(jtablaDetalle, txtnroproductos, txttotalventa);
     }//GEN-LAST:event_btnQuitarActionPerformed
 
     private void btnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarActionPerformed
         if(jtablaDetalle.getRowCount() == 0) 
             JOptionPane.showMessageDialog(null, "No se encuentran productos registrados");
         
-        Ejercicio04Tabla.cancelarArticulosTabla(jtablaDetalle);
-        Ejercicio04Calculos.actualizarCampos(jtablaDetalle, txtnroproductos, txttotalventa);
+        e4t.CancelarArticulosTabla(jtablaDetalle);
+        e4.actualizarCampos(jtablaDetalle, txtnroproductos, txttotalventa);
     }//GEN-LAST:event_btnCancelarActionPerformed
 
     private void btnNuevoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNuevoActionPerformed
         txtnroproductos.setText("0");
-        Ejercicio04Calculos.limpiarCampos(new JTextField[]{txtprecio, txttotalventa},
+        e4.limpiarCampos(new JTextField[]{txtprecio, txttotalventa},
         new JComboBox[]{cboEmpleados, cboClientes, cboarticulos},
         new JTable[]{jtablaDetalle},
         new JCheckBox[]{chkDesc5, chkDesc10},
@@ -475,26 +477,26 @@ public class FrmEjercicio04 extends javax.swing.JFrame {
         return;
         }
 
-        e4.setEmpleadoSeleccionado(cboEmpleados.getSelectedItem().toString());
-        e4.setClienteSeleccionado(cboClientes.getSelectedItem().toString());
+        e4d.setEmpleadoSeleccionado(cboEmpleados.getSelectedItem().toString());
+        e4d.setClienteSeleccionado(cboClientes.getSelectedItem().toString());
         Date fechaActual = new Date();
         DateFormat formatoFecha = new SimpleDateFormat("dd/MM/yyyy");
         String fechaVentaFormateada = formatoFecha.format(fechaActual);
-        e4.setFechaVenta(fechaVentaFormateada);
-        FrmEjercicio04Datos frmdatos = new FrmEjercicio04Datos(e4);
+        e4d.setFechaVenta(fechaVentaFormateada);
+        FrmEjercicio04Datos frmdatos = new FrmEjercicio04Datos(e4d);
         frmdatos.setVisible(true); 
     }//GEN-LAST:event_btnVerReporteActionPerformed
 
     private void cboarticulosItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cboarticulosItemStateChanged
         if(cboarticulos.getSelectedIndex()==0){
             txtprecio.setText("0.00");
-            Ejercicio04Calculos.mostrarImagen("Informatica", jfoto);
+            e4.mostrarImagen("Informatica", jfoto);
         } else {
             if (cboarticulos.getSelectedIndex()>0){
-                double precio = Ejercicio04Calculos.obtenerPrecio(cboarticulos.getSelectedIndex());
+                double precio = e4.obtenerPrecio(cboarticulos.getSelectedIndex());
                 String precioFormateado = String.format(Locale.US,"%.2f", precio);
                 txtprecio.setText(precioFormateado);
-                Ejercicio04Calculos.mostrarImagen(cboarticulos.getSelectedItem().toString(),jfoto);
+                e4.mostrarImagen(cboarticulos.getSelectedItem().toString(),jfoto);
             }
         }
     }//GEN-LAST:event_cboarticulosItemStateChanged
@@ -505,7 +507,6 @@ public class FrmEjercicio04 extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_btnCerrarActionPerformed
 
-    
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">

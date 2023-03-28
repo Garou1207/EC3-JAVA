@@ -19,6 +19,7 @@ import javax.swing.table.DefaultTableModel;
 
 public class Ejercicio04Calculos implements IEjercicio04{
     
+    @Override
     public  void actualizarFechaHora(JLabel lblReloj, JLabel lblFecha)  {
         Timer timer = new Timer(1000, (ActionEvent e) -> {
         Date date = new Date();
@@ -33,18 +34,21 @@ public class Ejercicio04Calculos implements IEjercicio04{
     timer.start();
     }
 
+    @Override
     public  void agregarEmpleados(JComboBox cboEmpleados) {
         String[] empleados = { "Seleccione", "Juan Perez", "Maria Alarcon", "Jose Hernandez", "Julia Lopez", "Pedro Gomez" };
         cboEmpleados.setModel(new javax.swing.DefaultComboBoxModel<>(empleados));
         cboEmpleados.setSelectedIndex(0);
     }
 
+    @Override
     public  void agregarClientes(JComboBox cboClientes) {
         String[] clientes = { "Seleccione", "Carlos Garcia", "Juana Rodrigez", "Ana Huaman", "Rodrigo Sanchez", "Mauro Castillo" };
         cboClientes.setModel(new javax.swing.DefaultComboBoxModel<>(clientes));
         cboClientes.setSelectedIndex(0);
     }
     
+    @Override
     public  void agregarArticulos(JComboBox cboarticulos) {
         cboarticulos.removeAllItems();
         cboarticulos.addItem("Seleccione");
@@ -58,17 +62,20 @@ public class Ejercicio04Calculos implements IEjercicio04{
         cboarticulos.addItem("Webcam");
     }
 
+    @Override
     public  void mostrarImagen(String nombre, JLabel jfoto) {
         ImageIcon icono = new ImageIcon("src/main/java/PKIMAGENES/"+nombre+".jpg");
         Icon icon = new ImageIcon(icono.getImage().getScaledInstance(jfoto.getWidth(),jfoto.getHeight(),Image.SCALE_DEFAULT));
         jfoto.setIcon(icon);
     }
     
+    @Override
     public  double obtenerPrecio(int indice) {
         double[] precios={0.00,1600.55,800.50,120.34,500.50,200.50,140.20,180.50,80.50};
         return precios[indice];
     }
 
+    @Override
     public  double obtenerDescuento(double precio, int descuento, int cantidad) {
         double precioOriginal = precio * cantidad;
         double porcentaje =  descuento / 100.0;
@@ -76,6 +83,7 @@ public class Ejercicio04Calculos implements IEjercicio04{
         return descuentoAplicado;
     }
     
+    @Override
     public  double obtenerTotal(double precio, int descuento, int cantidad) {
         double precioOriginal = precio * cantidad;
         double porcentaje =  descuento / 100.0;
@@ -86,6 +94,7 @@ public class Ejercicio04Calculos implements IEjercicio04{
     
     DefaultTableModel dfm = new DefaultTableModel();
     
+    @Override
     public double obtenerTotalVenta(JTable jt)  {
         double sumatotal = 0;
             for(int i=0; i<jt.getRowCount(); i++){
@@ -94,14 +103,17 @@ public class Ejercicio04Calculos implements IEjercicio04{
         return sumatotal;
     } 
     
+    @Override
     public double obtenerIgv(double precio, double igv) {
         return precio * igv;
     }
     
+    @Override
     public double obtenerTotalIgv(double importe, double igv) {
         return importe - igv;
     }
 
+    @Override
     public void actualizarCampos(JTable jt, JTextField txtnroproductos, JTextField txtotalventa) {
         DefaultTableModel modelo = (DefaultTableModel) jt.getModel();
         int nroProductos = modelo.getRowCount();
@@ -114,6 +126,7 @@ public class Ejercicio04Calculos implements IEjercicio04{
         txtotalventa.setText(String.format(Locale.US, "%.2f", totalVenta));
     }
     
+    @Override
     public void limpiarCampos(JTextField [] contenidoText, JComboBox[] contenidoCombo, JTable[] 
             contenidoTable, JCheckBox[] contenidoCheck, JSpinner contenidoSpinner) {
     for (int i = 0; i < contenidoText.length; i++) {
