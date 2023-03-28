@@ -1,6 +1,6 @@
 package PKCLASES;
 
-import PKINTERFACES.IEjercicio02;
+import PKCABSTRACTAS.Ejercicio02Abs;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import javax.swing.DefaultListModel;
@@ -9,7 +9,7 @@ import javax.swing.JList;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 
-public class Ejercicio02Calculos implements IEjercicio02 {
+public class Ejercicio02Calculos extends Ejercicio02Abs{
     
     DefaultListModel dlm = new DefaultListModel();
     

@@ -1,6 +1,6 @@
 package PKCLASES;
 
-import PKINTERFACES.IEjercicio01;
+import PKCABSTRACTAS.Ejercicio01Abs;
 import java.time.LocalDate;
 import javax.swing.JComboBox;
 import javax.swing.JLabel;
@@ -8,7 +8,7 @@ import javax.swing.JOptionPane;
 import javax.swing.JSpinner;
 import javax.swing.SpinnerNumberModel;
 
-public class Ejercicio01Calculos implements IEjercicio01{
+public class Ejercicio01Calculos extends Ejercicio01Abs{
     
     private int anio;
     private int dia;
