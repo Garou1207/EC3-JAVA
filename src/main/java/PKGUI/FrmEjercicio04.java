@@ -398,56 +398,57 @@ public class FrmEjercicio04 extends javax.swing.JFrame {
 
     private void btnAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarActionPerformed
         
+        boolean datosCompletos = true;
         if(cboEmpleados.getSelectedIndex() == 0) {
             JOptionPane.showMessageDialog(null, "Debe seleccionar un empleado");
-        }
-        if(cboClientes.getSelectedIndex() == 0) {
+            datosCompletos = false;
+        } else if(cboClientes.getSelectedIndex() == 0) {
             JOptionPane.showMessageDialog(null, "Debe seleccionar un cliente");
-        } 
-        if(cboarticulos.getSelectedIndex() == 0) {
+            datosCompletos = false;
+        } else  if(cboarticulos.getSelectedIndex() == 0) {
             JOptionPane.showMessageDialog(null, "Debe seleccionar un articulo");
-        }
-        String producto = cboarticulos.getSelectedItem().toString();
-        for (int i = 0; i < jtablaDetalle.getRowCount(); i++) {
-            if (jtablaDetalle.getValueAt(i, 0).equals(producto)) {
-                JOptionPane.showMessageDialog(null, "El producto ya ha sido agregado a la venta");
-                return;
-            }
-        }
-        if((int)jSpinner1.getValue() == 0) {
+            datosCompletos = false;
+        } else  if((int)jSpinner1.getValue() == 0) {
             JOptionPane.showMessageDialog(null, "Por favor ingrese una cantidad");
-            return;
+            datosCompletos = false;
+        } 
+        if (datosCompletos) {
+            String producto = cboarticulos.getSelectedItem().toString();
+            for (int i = 0; i < jtablaDetalle.getRowCount(); i++) {
+                if (jtablaDetalle.getValueAt(i, 0).equals(producto)) {
+                    JOptionPane.showMessageDialog(null, "El producto ya ha sido agregado a la venta");
+                    return;
+                }
+            }
+            double precio = Double.parseDouble(txtprecio.getText());
+            int cantidad = (int)jSpinner1.getValue();
+        
+             int descuentoSeleccionado = (chkDesc5.isSelected()) ? 5 : (chkDesc10.isSelected()) ? 10 : 0;
+ 
+            double descuento = e4.obtenerDescuento(precio, descuentoSeleccionado, cantidad);
+            double total = e4.obtenerTotal(precio,descuentoSeleccionado, cantidad);
+        
+            String descuentoFormateado = String.format(Locale.US, "%.2f", descuento);
+            String totalFormateado = String.format(Locale.US,"%.2f", total);
+            String precioFormateado = String.format(Locale.US,"%.2f", precio);
+        
+            DefaultTableModel modelo = (DefaultTableModel) jtablaDetalle.getModel();
+            modelo.addRow(new Object[]{producto, precioFormateado, cantidad, descuentoFormateado, totalFormateado});
+        
+            e4.actualizarCampos(jtablaDetalle, txtnroproductos, txttotalventa);
+        
+            double importe = Double.parseDouble(txttotalventa.getText());
+            double igv = e4.obtenerIgv(importe, 0.18);
+            double totalConIgv = e4.obtenerTotalIgv(importe, igv);
+        
+            String importeTexto = String.format(Locale.US, "%.2f", importe);
+            String igvTexto = String.format(Locale.US, "%.2f", igv);
+            String totalTexto = String.format(Locale.US, "%.2f", totalConIgv);
+        
+            e4d.setImporte(importeTexto);
+            e4d.setIgv(igvTexto);
+            e4d.setTotal(totalTexto);
         }
-        
-        double precio = Double.parseDouble(txtprecio.getText());
-        int cantidad = (int)jSpinner1.getValue();
-        
-        int descuentoSeleccionado = (chkDesc5.isSelected()) ? 5 : (chkDesc10.isSelected()) ? 10 : 0;
- 
-        double descuento = e4.obtenerDescuento(precio, descuentoSeleccionado, cantidad);
-        double total = e4.obtenerTotal(precio,descuentoSeleccionado, cantidad);
-        
-        String descuentoFormateado = String.format(Locale.US, "%.2f", descuento);
-        String totalFormateado = String.format(Locale.US,"%.2f", total);
-        String precioFormateado = String.format(Locale.US,"%.2f", precio);
- 
-        
-        DefaultTableModel modelo = (DefaultTableModel) jtablaDetalle.getModel();
-        modelo.addRow(new Object[]{producto, precioFormateado, cantidad, descuentoFormateado, totalFormateado});
-        
-        e4.actualizarCampos(jtablaDetalle, txtnroproductos, txttotalventa);
-        
-        double importe = Double.parseDouble(txttotalventa.getText());
-        double igv = e4.obtenerIgv(importe, 0.18);
-        double totalConIgv = e4.obtenerTotalIgv(importe, igv);
-        
-        String importeTexto = String.format(Locale.US, "%.2f", importe);
-        String igvTexto = String.format(Locale.US, "%.2f", igv);
-        String totalTexto = String.format(Locale.US, "%.2f", totalConIgv);
-        
-        e4d.setImporte(importeTexto);
-        e4d.setIgv(igvTexto);
-        e4d.setTotal(totalTexto);
     }//GEN-LAST:event_btnAgregarActionPerformed
 
     private void btnQuitarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnQuitarActionPerformed
