@@ -20,7 +20,6 @@ public class FrmEjercicio04 extends javax.swing.JFrame {
     Ejercicio04Calculos e4 = new Ejercicio04Calculos();
     Ejercicio04Tabla e4t = new Ejercicio04Tabla();
     
-    
     public FrmEjercicio04() {
         initComponents();
         setLocationRelativeTo(null);
@@ -401,13 +400,14 @@ public class FrmEjercicio04 extends javax.swing.JFrame {
         
         if(cboEmpleados.getSelectedIndex() == 0) {
             JOptionPane.showMessageDialog(null, "Debe seleccionar un empleado");
-        }
-        if(cboClientes.getSelectedIndex() == 0) {
+        } else if(cboClientes.getSelectedIndex() == 0) {
             JOptionPane.showMessageDialog(null, "Debe seleccionar un cliente");
-        } 
-        if(cboarticulos.getSelectedIndex() == 0) {
+        } else  if(cboarticulos.getSelectedIndex() == 0) {
             JOptionPane.showMessageDialog(null, "Debe seleccionar un articulo");
-        }
+        } else  if((int)jSpinner1.getValue() == 0) {
+            JOptionPane.showMessageDialog(null, "Por favor ingrese una cantidad");
+            return;
+        } 
         String producto = cboarticulos.getSelectedItem().toString();
         for (int i = 0; i < jtablaDetalle.getRowCount(); i++) {
             if (jtablaDetalle.getValueAt(i, 0).equals(producto)) {
@@ -415,11 +415,6 @@ public class FrmEjercicio04 extends javax.swing.JFrame {
                 return;
             }
         }
-        if((int)jSpinner1.getValue() == 0) {
-            JOptionPane.showMessageDialog(null, "Por favor ingrese una cantidad");
-            return;
-        }
-        
         double precio = Double.parseDouble(txtprecio.getText());
         int cantidad = (int)jSpinner1.getValue();
         
