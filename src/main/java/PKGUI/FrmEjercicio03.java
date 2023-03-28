@@ -302,14 +302,14 @@ public class FrmEjercicio03 extends javax.swing.JFrame {
     private void btnCalcularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCalcularActionPerformed
         //Validaciones
         if (txtNombres.getText().isEmpty()){
-            JOptionPane.showMessageDialog(this,"¡Debe Ingresar Nombres para proceder con el Cálculo!");
+            JOptionPane.showMessageDialog(this,"¡Debe Ingresar nombres para proceder con el Cálculo!");
         }else if(txtHorasTrabajadas.getText().isEmpty()){
-            JOptionPane.showMessageDialog(this,"¡Debe Ingresar Horas Trabajadas para proceder con el Cálculo!");
+            JOptionPane.showMessageDialog(this,"¡Debe Ingresar las horas trabajadas para proceder con el Cálculo!");
         }else if(buttonGroup1.getSelection()==null){
             JOptionPane.showMessageDialog(this,"¡Debe seleccionar por lo menos un botón de Sección!");
         }else{
         e3.sethTrabajadas(Integer.parseInt(txtHorasTrabajadas.getText()));
-        e3.Calcular(txtFechaIngreso, chkAFP, chkAFP, txtNombres, txtHorasTrabajadas);
+        e3.Calcular(txtFechaIngreso, chkAFP, chkAFP);
         txtPagoTotal.setText(""+ e3.getpTotal());
         txtBonificacion.setText("" + e3.getBoni());
         txtAFP.setText("" + e3.getAFP());

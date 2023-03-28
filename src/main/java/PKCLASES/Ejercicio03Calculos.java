@@ -138,12 +138,7 @@ public class Ejercicio03Calculos implements IEjercicio03 {
     }
     
     @Override
-    public void Calcular(JTextField txtA, JCheckBox afp, JCheckBox fyT, JTextField txtNyA, JTextField txtH) {
-        if (txtNyA.getText().equals("")) {
-            JOptionPane.showMessageDialog(null, "Debes de ingresar un nombre");
-        } else if (txtH.getText().equals("")) {
-            JOptionPane.showMessageDialog(null, "Debes de ingresar las horas trabajadas");
-        }
+    public void Calcular(JTextField txtA, JCheckBox afp, JCheckBox fyT) {
         pTotal = hTrabajadas * bHora; // Pago total
         boni = 0; // Calculando Bonificacion
         String fechaIngresadaTexto = txtA.getText();

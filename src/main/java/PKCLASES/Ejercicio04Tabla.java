@@ -19,7 +19,6 @@ public class Ejercicio04Tabla implements IEjercicio04Datos{
         dfm.addColumn("Cantidad");
         dfm.addColumn("Descuento");
         dfm.addColumn("Total");
-        
         jt.getColumnModel().getColumn(0).setPreferredWidth(180);
         jt.getColumnModel().getColumn(1).setPreferredWidth(80);
         jt.getColumnModel().getColumn(2).setPreferredWidth(80);

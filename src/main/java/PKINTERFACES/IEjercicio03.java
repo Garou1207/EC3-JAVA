@@ -16,7 +16,7 @@ public interface IEjercicio03 {
     void MostrarIMG(JLabel img);
     void BHHilanderia(JRadioButton hil, JTextField txt);
     void BHTintoleria(JRadioButton tin, JTextField txt);
-    void Calcular(JTextField txtA, JCheckBox  afp, JCheckBox  fyT, JTextField txtNyA, JTextField txtH);
+    void Calcular(JTextField txtA, JCheckBox  afp, JCheckBox  fyT);
     void Nuevo(Container c, ButtonGroup bg, JCheckBox a, JCheckBox f);
     
 }
